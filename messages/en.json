@@ -1,0 +1,131 @@
+{
+  "siteName": "Baraka Limousine",
+  "siteTagline": "No more hassle searching for the right limousine services and prices",
+  "siteHours": "Available 24/7",
+  "navAbout": "About",
+  "navServices": "Services",
+  "navBlog": "Blog",
+  "navContact": "Contact",
+  "navLanguage": "العربية",
+  "navMenu": "Menu",
+  "navClose": "Close",
+  "ctaCallNow": "Call Now",
+  "ctaWhatsapp": "WhatsApp",
+  "homeHeroTitle": "Cairo Airport limousine service with premium 24/7 support",
+  "homeHeroSubtitle": "Comfort and professionalism on every ride in and out of Cairo.",
+  "homeHighlights": [
+    { "title": "Modern fleet", "subtitle": "Updated vehicles" },
+    { "title": "Professional drivers", "subtitle": "Reliable service" },
+    { "title": "Fair pricing", "subtitle": "Real value" },
+    { "title": "Fast booking", "subtitle": "Instant confirmation" }
+  ],
+  "homeServicesTitle": "Our Services",
+  "homeServicesCta": "View all services",
+  "homeCtaTitle": "Book your ride now with Baraka Limousine",
+  "homeCtaSubtitle": "Premium service and professional drivers on every trip.",
+  "homeGalleryTitle": "Gallery",
+  "homeContactTitle": "Get in touch",
+  "homeContactEmailHint": "Or email us at: {email}",
+  "aboutTitle": "About Us",
+  "aboutParagraphs": [
+    "Baraka Limousine delivers premium limousine services in Egypt with modern vehicles, fair pricing, and 24/7 support.",
+    "We focus on customer comfort and safety with professional drivers and a fast booking experience."
+  ],
+  "servicesTitle": "Our Services",
+  "servicesItems": [
+    {
+      "id": "airport",
+      "title": "Airport Limousine Service",
+      "description": "Transfers to and from all Egyptian airports with comfort, speed, and professional pickup."
+    },
+    {
+      "id": "business",
+      "title": "Business Service",
+      "description": "Business comfort comes first with premium vehicles and professional drivers."
+    },
+    {
+      "id": "wedding",
+      "title": "Wedding Limousine",
+      "description": "Luxury wedding cars for an unforgettable celebration."
+    },
+    {
+      "id": "trips",
+      "title": "Trips & Excursions",
+      "description": "Intercity trips across Egypt with reliable service and fair pricing."
+    },
+    {
+      "id": "vip",
+      "title": "VIP Car Booking",
+      "description": "Modern vehicles and highly trained drivers for VIP comfort."
+    },
+    {
+      "id": "borg-elarab",
+      "title": "Borg El Arab Airport Limo",
+      "description": "Safe, smooth rides to Borg El Arab Airport at great rates."
+    }
+  ],
+  "serviceDetails": "Service details",
+  "blogTitle": "Blog",
+  "blogReadMore": "Read more",
+  "blogPosts": [
+    {
+      "slug": "airport-limo-tips",
+      "title": "Tips for Booking an Airport Limo with Ease",
+      "excerpt": "Learn the key steps to book an airport limo quickly and safely.",
+      "content": [
+        "Book your ride early and confirm the exact pickup point.",
+        "Share flight details with support for a professional pickup experience.",
+        "Choose the right vehicle class based on passengers and luggage."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "business-travel-comfort",
+      "title": "Business Comfort Starts with Transportation",
+      "excerpt": "How business-class service helps save time and stay focused.",
+      "content": [
+        "Vehicles designed for privacy and all-day comfort.",
+        "Professional drivers who respect schedules and know the best routes.",
+        "Flexible booking for daily rides and meeting transfers."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "wedding-limo-guide",
+      "title": "A Guide to Choosing the Right Wedding Limo",
+      "excerpt": "Plan your wedding day with luxury cars and unique service.",
+      "content": [
+        "Pick a vehicle that matches the style of your celebration.",
+        "Book early to secure the ideal car for your wedding day.",
+        "Ask about decoration options for a special experience."
+      ],
+      "publishedOn": "2026-02-01"
+    }
+  ],
+  "contactTitle": "Contact Us",
+  "contactSubtitle": "Book your ride now and reach Baraka Limousine.",
+  "contactWhatsappAction": "Chat on WhatsApp",
+  "contactAddress": "Sidi Bishr, Omar Ibn El-Khattab St., off 30 St., Cairo",
+  "contactHours": "Available 24/7",
+  "footerContactTitle": "Contact",
+  "footerQuickLinks": "Quick links",
+  "footerRights": "© 2026 Baraka Limousine. All rights reserved.",
+  "metaSiteTitle": "Baraka Limousine",
+  "metaSiteDescription": "Premium limousine services in Egypt with 24/7 booking and fair pricing.",
+  "metaKeywords": [
+    "Baraka Limousine",
+    "Cairo airport limo",
+    "Borg El Arab limo",
+    "Business limousine",
+    "Wedding limo service",
+    "Trips limousine"
+  ],
+  "metaAboutTitle": "About Us",
+  "metaAboutDescription": "Learn about Baraka Limousine and our specialized services.",
+  "metaServicesTitle": "Our Services",
+  "metaServicesDescription": "Limousine services available from Baraka Limousine.",
+  "metaBlogTitle": "Blog",
+  "metaBlogDescription": "Baraka Limousine posts and travel tips.",
+  "metaContactTitle": "Contact Us",
+  "metaContactDescription": "Book your ride now and reach Baraka Limousine."
+}
