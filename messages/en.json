@@ -26,12 +26,168 @@
   "homeGalleryTitle": "Gallery",
   "homeContactTitle": "Get in touch",
   "homeContactEmailHint": "Or email us at: {email}",
+  "homeIntroTitle": "Why Baraka Limousine",
+  "homeIntroParagraphs": [
+    "We are based in Egypt and specialize in private airport shuttles and premium car service for business, families, and travelers.",
+    "From Cairo to Alexandria, Sharm El Sheikh, Hurghada, and all major cities, our drivers deliver safe, on-time transfers.",
+    "We offer clear pricing, 24/7 support, and a modern fleet tailored to every trip size."
+  ],
+  "homeFleetTitle": "Fleet & Capacity",
+  "homeFleetSubtitle": "From 4-seat sedans to 50-seat buses, with every size in between.",
+  "homeFleetItems": [
+    { "title": "Private Sedan (4 seats)", "subtitle": "Ideal for solo or business travel." },
+    { "title": "SUV (6-7 seats)", "subtitle": "Extra space for families and luggage." },
+    { "title": "Van (8-14 seats)", "subtitle": "Group airport transfers and tours." },
+    { "title": "Coaster (22-30 seats)", "subtitle": "Comfortable for larger groups." },
+    { "title": "Bus (40-50 seats)", "subtitle": "Full-size coaches for events and delegations." }
+  ],
+  "homeCoverageTitle": "Coverage across Egypt",
+  "homeCoverageItems": [
+    "Cairo Airport (CAI) and Sphinx Airport (SPX)",
+    "Borg El Arab, Alexandria, and North Coast",
+    "Hurghada, Sharm El Sheikh, and Red Sea resorts",
+    "Upper Egypt routes and intercity transfers"
+  ],
+  "homeCapacityTitle": "Private shuttle, any size",
+  "homeCapacityText": "Choose from 4-seat cars up to 50-seat buses for airport transfers, city rides, and private trips.",
+  "homeTestimonialsTitle": "Trusted by travelers across Egypt",
+  "homeTestimonialsSubtitle": "Private airport shuttles and long-distance trips with reliable drivers.",
+  "homeTestimonialsItems": [
+    {
+      "name": "Ahmed M.",
+      "role": "Cairo Airport pickup",
+      "quote": "Driver was on time and the car was spotless. Smooth ride to downtown Cairo.",
+      "location": "Cairo"
+    },
+    {
+      "name": "Sara K.",
+      "role": "Family transfer",
+      "quote": "We booked an SUV for our family. Plenty of space and very comfortable.",
+      "location": "Giza"
+    },
+    {
+      "name": "Omar H.",
+      "role": "Group trip",
+      "quote": "Van was perfect for our group transfer to Alexandria. Professional service.",
+      "location": "Alexandria"
+    },
+    {
+      "name": "Mona R.",
+      "role": "Airport transfer",
+      "quote": "Smooth pickup at Cairo Airport and a very comfortable sedan.",
+      "location": "Cairo"
+    },
+    {
+      "name": "Khaled S.",
+      "role": "Business travel",
+      "quote": "Reliable timing and professional driver for daily meetings.",
+      "location": "New Cairo"
+    }
+  ],
+  "homePricingTitle": "Pricing guidance",
+  "homePricingSubtitle": "Transparent rates based on distance, time, and vehicle size.",
+  "homePricingNotes": [
+    "Airport transfers are priced by route and vehicle category.",
+    "Private trips are billed by distance with fixed pricing options.",
+    "Large group transport depends on vehicle size and itinerary."
+  ],
+  "homeTrustTitle": "Why travelers trust us",
+  "homeTrustItems": [
+    "Licensed drivers and reliable airport procedures",
+    "Modern fleet with regular maintenance",
+    "Support available 24/7 for changes",
+    "Clear pickup instructions and fast communication"
+  ],
+  "homeRoutesTitle": "Popular routes",
+  "homeRoutesItems": [
+    "Cairo Airport to Downtown Cairo",
+    "Cairo to Alexandria private transfer",
+    "Cairo to New Administrative Capital",
+    "Cairo to Hurghada and Red Sea",
+    "Cairo to Sharm El Sheikh",
+    "Borg El Arab Airport to Alexandria"
+  ],
+  "homeFleetSpecsTitle": "Fleet features",
+  "homeFleetSpecsItems": [
+    "Air-conditioned vehicles",
+    "Luggage space options",
+    "Comfortable seating for long trips",
+    "Professional chauffeur service"
+  ],
   "aboutTitle": "About Us",
   "aboutParagraphs": [
     "Baraka Limousine delivers premium limousine services in Egypt with modern vehicles, fair pricing, and 24/7 support.",
     "We focus on customer comfort and safety with professional drivers and a fast booking experience."
   ],
+  "aboutSections": [
+    {
+      "title": "Our mission",
+      "paragraphs": [
+        "Provide reliable private transportation across Egypt with consistent quality and clear communication.",
+        "Deliver on-time airport transfers and safe intercity trips for individuals, families, and corporate teams."
+      ]
+    },
+    {
+      "title": "Why clients choose us",
+      "paragraphs": [
+        "Professional drivers, clean vehicles, and flexible scheduling.",
+        "Options for every group size, from 4-seat cars to 50-seat buses."
+      ]
+    },
+    {
+      "title": "Service standards",
+      "paragraphs": [
+        "Clear pickup instructions and on-time arrival.",
+        "Support team available for changes or questions."
+      ]
+    }
+  ],
+  "aboutValuesTitle": "Our values",
+  "aboutValuesItems": [
+    "Punctuality and reliability",
+    "Safety for every passenger",
+    "Transparent pricing",
+    "Respectful, professional drivers"
+  ],
+  "aboutServiceAreasTitle": "Areas we serve",
+  "aboutServiceAreasItems": [
+    "Cairo and Greater Cairo",
+    "Alexandria and North Coast",
+    "Hurghada and Red Sea",
+    "Sharm El Sheikh and Sinai",
+    "Upper Egypt routes"
+  ],
   "servicesTitle": "Our Services",
+  "servicesIntroParagraphs": [
+    "We provide private airport transfers, city rides, and long-distance trips across Egypt.",
+    "Select the right vehicle size for your group and luggage with transparent pricing."
+  ],
+  "servicesBenefitsTitle": "Why our service works",
+  "servicesBenefits": [
+    "24/7 booking and flight tracking",
+    "Meet-and-greet at airport terminals",
+    "Fixed pricing with no hidden fees",
+    "Modern fleet and licensed drivers"
+  ],
+  "servicesProcessTitle": "How booking works",
+  "servicesProcess": [
+    "Send your pickup details and flight time",
+    "Choose your vehicle size and confirm",
+    "Your driver meets you on time"
+  ],
+  "servicesRoutesTitle": "Popular service routes",
+  "servicesRoutesItems": [
+    "Cairo Airport to downtown and hotels",
+    "Cairo to Alexandria private transfer",
+    "Cairo to Hurghada and Sharm El Sheikh",
+    "Borg El Arab Airport to Alexandria"
+  ],
+  "servicesPricingTitle": "How we price trips",
+  "servicesPricingNotes": [
+    "Pricing is based on route, vehicle size, and time of day.",
+    "You can request a fixed price before confirming.",
+    "Long-distance trips include optional stopovers."
+  ],
   "servicesItems": [
     {
       "id": "airport",
@@ -62,9 +218,278 @@
       "id": "borg-elarab",
       "title": "Borg El Arab Airport Limo",
       "description": "Safe, smooth rides to Borg El Arab Airport at great rates."
+    },
+    {
+      "id": "sedan",
+      "title": "Private Sedan (4 seats)",
+      "description": "Comfortable sedans for airport transfers, business rides, and daily trips."
+    },
+    {
+      "id": "suv",
+      "title": "SUV (6-7 seats)",
+      "description": "Roomy SUVs for families, extra luggage, and long-distance travel."
+    },
+    {
+      "id": "van",
+      "title": "Van (8-14 seats)",
+      "description": "Private shuttle vans for small groups and tour programs."
+    },
+    {
+      "id": "coaster",
+      "title": "Coaster (22-30 seats)",
+      "description": "Mid-size buses for corporate and group transportation."
+    },
+    {
+      "id": "bus",
+      "title": "Bus (40-50 seats)",
+      "description": "Full-size buses for events, delegations, and large group transfers."
+    }
+  ],
+  "serviceDetailSections": [
+    {
+      "id": "airport",
+      "title": "Airport pickup made simple",
+      "paragraphs": [
+        "We monitor flight status and adjust pickup time for delays.",
+        "Drivers meet you at arrivals and assist with luggage."
+      ],
+      "bullets": [
+        "Cairo Airport (CAI), Sphinx (SPX), Borg El Arab",
+        "Private sedan, SUV, van, or bus"
+      ]
+    },
+    {
+      "id": "business",
+      "title": "Business-class transfers",
+      "paragraphs": [
+        "Quiet, comfortable rides between meetings, hotels, and airports.",
+        "Flexible booking with priority support."
+      ],
+      "bullets": [
+        "Corporate accounts available",
+        "Daily or multi-day schedules"
+      ]
+    },
+    {
+      "id": "trips",
+      "title": "Intercity and private trips",
+      "paragraphs": [
+        "Travel between Cairo, Alexandria, North Coast, Red Sea, and Upper Egypt.",
+        "Choose the right vehicle size for comfort on long routes."
+      ],
+      "bullets": [
+        "Experienced long-distance drivers",
+        "Rest stops and route planning"
+      ]
+    },
+    {
+      "id": "sedan",
+      "title": "Private sedan service",
+      "paragraphs": [
+        "Ideal for airport transfers, business trips, and city rides.",
+        "Comfortable for up to 4 passengers."
+      ],
+      "bullets": [
+        "Best for solo and small groups",
+        "Air-conditioned, late-model vehicles"
+      ]
+    },
+    {
+      "id": "suv",
+      "title": "SUV for family travel",
+      "paragraphs": [
+        "More space for luggage and longer trips.",
+        "Perfect for families and premium travel."
+      ],
+      "bullets": [
+        "Seats 6-7 passengers",
+        "Extra luggage capacity"
+      ]
+    },
+    {
+      "id": "van",
+      "title": "Private shuttle vans",
+      "paragraphs": [
+        "Best choice for group transfers and city tours.",
+        "Flexible seating and spacious interiors."
+      ],
+      "bullets": [
+        "Seats 8-14 passengers",
+        "Great for airport shuttles"
+      ]
+    },
+    {
+      "id": "coaster",
+      "title": "Coaster for medium groups",
+      "paragraphs": [
+        "Comfortable trips for corporate teams and tour groups.",
+        "Better space and comfort for longer drives."
+      ],
+      "bullets": [
+        "Seats 22-30 passengers",
+        "Ideal for company events"
+      ]
+    },
+    {
+      "id": "bus",
+      "title": "Full-size bus transfers",
+      "paragraphs": [
+        "Best for large delegations, events, and group travel.",
+        "Professional logistics for big groups."
+      ],
+      "bullets": [
+        "Seats 40-50 passengers",
+        "Perfect for conferences and events"
+      ]
+    }
+  ],
+  "serviceFaqs": [
+    {
+      "id": "airport",
+      "faqs": [
+        {
+          "q": "Do you track flight delays?",
+          "a": "Yes, we monitor flight status and adjust pickup time accordingly."
+        },
+        {
+          "q": "Where does the driver meet me?",
+          "a": "The driver meets you at arrivals with a name sign and helps with luggage."
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "faqs": [
+        {
+          "q": "Can I book recurring rides?",
+          "a": "Yes, we can arrange daily or weekly schedules for corporate clients."
+        },
+        {
+          "q": "Do you offer business-class vehicles?",
+          "a": "Yes, we provide premium sedans and SUVs with professional drivers."
+        }
+      ]
+    },
+    {
+      "id": "trips",
+      "faqs": [
+        {
+          "q": "Do you handle intercity trips?",
+          "a": "Yes, we offer private transfers between Cairo, Alexandria, Red Sea, and Upper Egypt."
+        },
+        {
+          "q": "Can we plan stops on the way?",
+          "a": "Yes, stopovers can be arranged in advance."
+        }
+      ]
+    },
+    {
+      "id": "sedan",
+      "faqs": [
+        {
+          "q": "How many passengers fit in a sedan?",
+          "a": "Sedans are ideal for up to 4 passengers."
+        },
+        {
+          "q": "Is the sedan suitable for airport trips?",
+          "a": "Yes, sedans are perfect for private airport transfers."
+        }
+      ]
+    },
+    {
+      "id": "suv",
+      "faqs": [
+        {
+          "q": "How many seats does the SUV have?",
+          "a": "Most SUVs seat 6-7 passengers."
+        },
+        {
+          "q": "Do SUVs have extra luggage space?",
+          "a": "Yes, SUVs provide more space for luggage and comfort."
+        }
+      ]
+    },
+    {
+      "id": "van",
+      "faqs": [
+        {
+          "q": "Is the van private?",
+          "a": "Yes, all vans are private and reserved for your group."
+        },
+        {
+          "q": "What group size is ideal?",
+          "a": "Vans are best for 8-14 passengers."
+        }
+      ]
+    },
+    {
+      "id": "coaster",
+      "faqs": [
+        {
+          "q": "What is the seating capacity?",
+          "a": "Coasters typically seat 22-30 passengers."
+        },
+        {
+          "q": "Is it comfortable for long trips?",
+          "a": "Yes, coasters are a comfortable option for longer routes."
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "faqs": [
+        {
+          "q": "Do you provide 50-seat buses?",
+          "a": "Yes, we offer 40-50 seat buses for large groups."
+        },
+        {
+          "q": "Can buses be booked for events?",
+          "a": "Yes, we handle conferences, delegations, and event transport."
+        }
+      ]
+    },
+    {
+      "id": "wedding",
+      "faqs": [
+        {
+          "q": "Can we decorate the wedding car?",
+          "a": "Yes, decoration options can be arranged on request."
+        },
+        {
+          "q": "Do you offer premium models?",
+          "a": "Yes, we have luxury options for weddings."
+        }
+      ]
+    },
+    {
+      "id": "vip",
+      "faqs": [
+        {
+          "q": "What makes VIP booking different?",
+          "a": "VIP bookings include premium vehicles and prioritized support."
+        },
+        {
+          "q": "Is chauffeur service included?",
+          "a": "Yes, all VIP rides include professional chauffeurs."
+        }
+      ]
+    },
+    {
+      "id": "borg-elarab",
+      "faqs": [
+        {
+          "q": "Do you serve Borg El Arab Airport?",
+          "a": "Yes, we offer transfers to and from Borg El Arab Airport."
+        },
+        {
+          "q": "Can I book a return trip?",
+          "a": "Yes, round trips can be scheduled in advance."
+        }
+      ]
     }
   ],
   "serviceDetails": "Service details",
+  "serviceFaqTitle": "Frequently asked questions",
   "blogTitle": "Blog",
   "blogReadMore": "Read more",
   "blogPosts": [
@@ -73,9 +498,16 @@
       "title": "Tips for Booking an Airport Limo with Ease",
       "excerpt": "Learn the key steps to book an airport limo quickly and safely.",
       "content": [
-        "Book your ride early and confirm the exact pickup point.",
-        "Share flight details with support for a professional pickup experience.",
-        "Choose the right vehicle class based on passengers and luggage."
+        "Book your ride early and confirm the exact pickup point inside the terminal.",
+        "Share flight details so we can track delays and adjust the pickup time.",
+        "Choose the right vehicle class based on passengers, luggage, and arrival time.",
+        "Confirm the driver contact number and vehicle details before you fly.",
+        "If you are arriving late night, ask about 24/7 availability and support.",
+        "For families, SUVs and vans provide extra space for strollers and bags.",
+        "For business travel, sedans offer a quiet ride and fast city transfers.",
+        "Always confirm the destination address and any required stops.",
+        "For international arrivals, allow extra time for immigration and baggage claim.",
+        "Keep WhatsApp ready for fast communication in case of terminal changes."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -84,9 +516,14 @@
       "title": "Business Comfort Starts with Transportation",
       "excerpt": "How business-class service helps save time and stay focused.",
       "content": [
-        "Vehicles designed for privacy and all-day comfort.",
-        "Professional drivers who respect schedules and know the best routes.",
-        "Flexible booking for daily rides and meeting transfers."
+        "Business travel requires punctuality, privacy, and consistent service.",
+        "Professional drivers respect schedules and plan the fastest routes.",
+        "Quiet vehicles help you prepare for meetings or take calls on the move.",
+        "You can pre-book multi-stop itineraries for a full day of meetings.",
+        "Airport pickups are coordinated with flight times to avoid delays.",
+        "Dedicated support helps with last-minute changes and route updates.",
+        "Choose sedans for executive travel or SUVs for small teams.",
+        "Fixed pricing keeps budgeting predictable for corporate trips."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -95,9 +532,75 @@
       "title": "A Guide to Choosing the Right Wedding Limo",
       "excerpt": "Plan your wedding day with luxury cars and unique service.",
       "content": [
-        "Pick a vehicle that matches the style of your celebration.",
-        "Book early to secure the ideal car for your wedding day.",
-        "Ask about decoration options for a special experience."
+        "Choose a vehicle that matches the style of your wedding day.",
+        "Book early to secure the exact model and color you prefer.",
+        "Ask about decoration options, ribbons, and floral arrangements.",
+        "Plan the pickup time with a buffer to avoid last-minute delays.",
+        "Consider the route, parking options, and photo locations.",
+        "For larger families, add a second vehicle to keep everyone together.",
+        "Confirm the driver dress code for a polished experience.",
+        "Make sure the car is spotless and ready for photos."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "private-shuttle-egypt",
+      "title": "Private Shuttle in Egypt: What to Expect",
+      "excerpt": "How private shuttles work in Egypt and how to choose the right vehicle size.",
+      "content": [
+        "Private shuttles give you full control over timing and pickup points.",
+        "You avoid shared rides, stops, and delays that reduce comfort.",
+        "Choose a vehicle based on group size and luggage for better comfort.",
+        "Confirm the route, estimated travel time, and any planned stops.",
+        "Airport arrivals should include flight details for tracking.",
+        "Ask about child seats if you are traveling with kids.",
+        "For long trips, SUVs and vans provide better leg room.",
+        "Request a driver who knows your hotel or destination area."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "group-transfer-guide",
+      "title": "Group Transfers: From Vans to 50-Seat Buses",
+      "excerpt": "A quick guide to selecting the best option for medium and large groups.",
+      "content": [
+        "Vans are ideal for 8-14 passengers with standard luggage.",
+        "Coasters fit 22-30 passengers with extra space and comfort.",
+        "50-seat buses are best for events and large delegations.",
+        "Confirm pickup windows to keep group timing organized.",
+        "Provide a passenger list if you need multiple stops or hotels.",
+        "Ask for luggage capacity details for airport transfers.",
+        "For conferences, schedule return trips in advance."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "airport-transfer-egypt",
+      "title": "Airport Transfers in Egypt: Cairo, Sphinx, and Borg El Arab",
+      "excerpt": "Understand how airport pickups work and what to prepare before arrival.",
+      "content": [
+        "Share your flight number to track delays and arrival time.",
+        "Confirm the pickup point and driver contact details.",
+        "Choose the vehicle size based on luggage and passengers.",
+        "Arrivals at Cairo Airport can be busy, so plan for extra time.",
+        "Sphinx and Borg El Arab have quicker exits but still need confirmation.",
+        "International arrivals may require more time for immigration.",
+        "Keep your phone on for updates from the driver."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "cairo-alexandria-transfer",
+      "title": "Cairo to Alexandria by Private Car",
+      "excerpt": "Private transfers between Cairo and Alexandria with comfort and flexibility.",
+      "content": [
+        "Private cars offer flexible departure times and direct routes.",
+        "SUVs and vans are ideal for families and extra luggage.",
+        "Ask about rest stops and route preferences.",
+        "Plan your pickup time to avoid peak traffic in Cairo.",
+        "Choose a vehicle with extra comfort for long-distance travel.",
+        "Confirm the destination address and any hotel drop-off details.",
+        "For group trips, vans and coasters reduce travel complexity."
       ],
       "publishedOn": "2026-02-01"
     }
@@ -118,7 +621,13 @@
     "Borg El Arab limo",
     "Business limousine",
     "Wedding limo service",
-    "Trips limousine"
+    "Trips limousine",
+    "Private shuttle Egypt",
+    "Private car Cairo",
+    "Airport transfer Egypt",
+    "Minibus Cairo",
+    "Coaster bus Egypt",
+    "50 seat bus Egypt"
   ],
   "metaAboutTitle": "About Us",
   "metaAboutDescription": "Learn about Baraka Limousine and our specialized services.",

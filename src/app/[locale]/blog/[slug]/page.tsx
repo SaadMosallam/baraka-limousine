@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 
 type BlogPost = {
   slug: string;
@@ -13,7 +14,7 @@ type BlogPost = {
 };
 
 type BlogPageProps = {
-  params: { locale: "ar" | "en"; slug: string };
+  params: Promise<{ locale: "ar" | "en"; slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -39,6 +40,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: buildAlternates(locale, `/blog/${slug}`),
+    openGraph: buildOpenGraph(locale, `/blog/${slug}`, post.title, post.excerpt),
+    twitter: buildTwitter(post.title, post.excerpt),
   };
 }
 

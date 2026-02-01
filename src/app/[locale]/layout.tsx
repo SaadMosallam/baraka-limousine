@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, Locale } from "@/i18n/config";
+import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { siteInfo } from "@/data/siteInfo";
 import "../../app/globals.css";
 
 const geistSans = Geist({
@@ -30,19 +32,18 @@ export async function generateMetadata({
 }: LocaleLayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const title = t("metaSiteTitle");
+  const description = t("metaSiteDescription");
   return {
     title: {
-      default: t("metaSiteTitle"),
-      template: `%s | ${t("metaSiteTitle")}`,
+      default: title,
+      template: `%s | ${title}`,
     },
-    description: t("metaSiteDescription"),
+    description,
     keywords: t.raw("metaKeywords") as string[],
-    openGraph: {
-      title: t("metaSiteTitle"),
-      description: t("metaSiteDescription"),
-      type: "website",
-      locale: locale === "ar" ? "ar_EG" : "en_US",
-    },
+    alternates: buildAlternates(locale, ""),
+    openGraph: buildOpenGraph(locale, "", title, description),
+    twitter: buildTwitter(title, description),
   };
 }
 
@@ -57,11 +58,31 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const t = await getTranslations({ locale });
 
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: t("metaSiteTitle"),
+              description: t("metaSiteDescription"),
+              telephone: siteInfo.phone,
+              email: siteInfo.email,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: t("contactAddress"),
+                addressCountry: "EG",
+              },
+              areaServed: "Egypt",
+            }),
+          }}
+        />
         <NextIntlClientProvider
           locale={locale}
           messages={messages}

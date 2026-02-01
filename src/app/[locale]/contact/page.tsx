@@ -1,9 +1,29 @@
 
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactActions } from "@/components/ContactActions";
 import { siteInfo } from "@/data/siteInfo";
+import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const title = t("metaContactTitle");
+  const description = t("metaContactDescription");
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, "/contact"),
+    openGraph: buildOpenGraph(locale, "/contact", title, description),
+    twitter: buildTwitter(title, description),
+  };
+}
 
 export default async function ContactPage(props: { params: Promise<{ locale: string }> }) {
   const { locale } = await props.params;

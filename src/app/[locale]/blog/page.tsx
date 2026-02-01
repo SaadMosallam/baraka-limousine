@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 
 type BlogPost = {
   slug: string;
@@ -13,7 +14,7 @@ type BlogPost = {
 };
 
 type BlogPageProps = {
-  params: { locale: "ar" | "en" };
+  params: Promise<{ locale: "ar" | "en" }>;
 };
 
 export async function generateMetadata({
@@ -21,9 +22,14 @@ export async function generateMetadata({
 }: BlogPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const title = t("metaBlogTitle");
+  const description = t("metaBlogDescription");
   return {
-    title: t("metaBlogTitle"),
-    description: t("metaBlogDescription"),
+    title,
+    description,
+    alternates: buildAlternates(locale, "/blog"),
+    openGraph: buildOpenGraph(locale, "/blog", title, description),
+    twitter: buildTwitter(title, description),
   };
 }
 
