@@ -34,12 +34,19 @@ export function ServicesDropdown({ locale, label, items }: ServicesDropdownProps
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-60">
         <DropdownMenuItem asChild>
-          <Link href={`/${locale}/services`}>{label}</Link>
+          <Link href={`/${locale}/services`} className="cursor-pointer">
+            {label}
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         {items.map((service) => (
           <DropdownMenuItem asChild key={service.id}>
-           <Link href={`/${locale}/services/${service.id}`}>{service.title}</Link>
+            <Link
+              href={`/${locale}/services/${service.id}`}
+              className="cursor-pointer"
+            >
+              {service.title}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
