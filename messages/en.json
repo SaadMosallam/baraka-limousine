@@ -188,56 +188,68 @@
     "You can request a fixed price before confirming.",
     "Long-distance trips include optional stopovers."
   ],
+  "servicesCtaTitle": "Book your ride now with Baraka Limousine",
+  "servicesCtaSubtitle": "Premium service and professional drivers for every trip.",
   "servicesItems": [
     {
       "id": "airport",
       "title": "Airport Limousine Service",
-      "description": "Transfers to and from all Egyptian airports with comfort, speed, and professional pickup."
+      "description": "Transfers to and from all Egyptian airports with comfort, speed, and professional pickup.",
+      "image": "/airport-shuttle-single-person-with-luggage.png"
     },
     {
       "id": "business",
       "title": "Business Service",
-      "description": "Business comfort comes first with premium vehicles and professional drivers."
+      "description": "Business comfort comes first with premium vehicles and professional drivers.",
+      "image": "/driver-dressed-elegant-costume.jpg"
     },
     {
       "id": "wedding",
       "title": "Wedding Limousine",
-      "description": "Luxury wedding cars for an unforgettable celebration."
+      "description": "Luxury wedding cars for an unforgettable celebration.",
+      "image": "/black-bmw-decorated-with-white-wedding-bouquets.jpg"
     },
     {
       "id": "trips",
       "title": "Trips & Excursions",
-      "description": "Intercity trips across Egypt with reliable service and fair pricing."
+      "description": "Intercity trips across Egypt with reliable service and fair pricing.",
+      "image": "/intercity-trips-bus.png"
     },
     {
       "id": "vip",
       "title": "VIP Car Booking",
-      "description": "Modern vehicles and highly trained drivers for VIP comfort."
+      "description": "Modern vehicles and highly trained drivers for VIP comfort.",
+      "image": "/wedding-services-two-cars.png"
     },
     {
       "id": "sedan",
       "title": "Private Sedan (4 seats)",
-      "description": "Comfortable sedans for airport transfers, business rides, and daily trips."
+      "description": "Comfortable sedans for airport transfers, business rides, and daily trips.",
+      "image": "/elegant-man-standing-his-car-taxi-services.jpg"
     },
     {
       "id": "suv",
       "title": "SUV (6-7 seats)",
-      "description": "Roomy SUVs for families, extra luggage, and long-distance travel."
+      "description": "Roomy SUVs for families, extra luggage, and long-distance travel.",
+      "image": "/driver-with-opened-car-door.jpg"
     },
     {
       "id": "van",
       "title": "Van (8-14 seats)",
-      "description": "Private shuttle vans for small groups and tour programs."
+      "description": "Private shuttle vans for small groups and tour programs.",
+      "image": "/side-view-valet-holding-baggage.jpg"
     },
     {
       "id": "coaster",
       "title": "Coaster (22-30 seats)",
-      "description": "Mid-size buses for corporate and group transportation."
+      "description": "Mid-size buses for corporate and group transportation.",
+      "image": "/intercity-trips-bus.png"
     },
     {
       "id": "bus",
       "title": "Bus (40-50 seats)",
-      "description": "Full-size buses for events, delegations, and large group transfers."
+      "description": "Full-size buses for events, delegations, and large group transfers.",
+      "image": "/intercity-trips-bus.png"
     }
   ],
   "serviceDetailSections": [
@@ -479,6 +491,7 @@
       "slug": "airport-limo-tips",
       "title": "Tips for Booking an Airport Limo with Ease",
       "excerpt": "Learn the key steps to book an airport limo quickly and safely.",
+      "image": "/airport-shuttle-single-person-with-luggage.png",
       "content": [
         "Book your ride early and confirm the exact pickup point inside the terminal.",
         "Share flight details so we can track delays and adjust the pickup time.",
@@ -489,7 +502,12 @@
         "For business travel, sedans offer a quiet ride and fast city transfers.",
         "Always confirm the destination address and any required stops.",
         "For international arrivals, allow extra time for immigration and baggage claim.",
-        "Keep WhatsApp ready for fast communication in case of terminal changes."
+        "Keep WhatsApp ready for fast communication in case of terminal changes.",
+        "Ask if meet-and-greet inside the hall is available for smoother pickups.",
+        "Let us know about extra luggage or oversized items in advance.",
+        "Request child seats early to guarantee availability at the airport.",
+        "Choose a fixed-price quote to avoid surprises during peak hours.",
+        "Save the driver location pin so you can meet quickly at the gate."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -497,6 +515,7 @@
       "slug": "business-travel-comfort",
       "title": "Business Comfort Starts with Transportation",
       "excerpt": "How business-class service helps save time and stay focused.",
+      "image": "/driver-dressed-elegant-costume.jpg",
       "content": [
         "Business travel requires punctuality, privacy, and consistent service.",
         "Professional drivers respect schedules and plan the fastest routes.",
@@ -505,7 +524,12 @@
         "Airport pickups are coordinated with flight times to avoid delays.",
         "Dedicated support helps with last-minute changes and route updates.",
         "Choose sedans for executive travel or SUVs for small teams.",
-        "Fixed pricing keeps budgeting predictable for corporate trips."
+        "Fixed pricing keeps budgeting predictable for corporate trips.",
+        "Request invoices with company details for easier expense reporting.",
+        "VIP service ensures confidentiality and a professional appearance.",
+        "Select vehicles with extra legroom for longer business transfers.",
+        "Allow buffer time between meetings to reduce schedule pressure.",
+        "Use the same driver for a full day to keep timing consistent."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -513,6 +537,7 @@
       "slug": "wedding-limo-guide",
       "title": "A Guide to Choosing the Right Wedding Limo",
       "excerpt": "Plan your wedding day with luxury cars and unique service.",
+      "image": "/young-handsome-business-man-delivering-bouquet-beautiful-flowers.jpg",
       "content": [
         "Choose a vehicle that matches the style of your wedding day.",
         "Book early to secure the exact model and color you prefer.",
@@ -521,7 +546,12 @@
         "Consider the route, parking options, and photo locations.",
         "For larger families, add a second vehicle to keep everyone together.",
         "Confirm the driver dress code for a polished experience.",
-        "Make sure the car is spotless and ready for photos."
+        "Make sure the car is spotless and ready for photos.",
+        "Share a timeline with the driver for smooth transitions.",
+        "Choose a car with a spacious back seat for the dress.",
+        "Coordinate with the photographer for arrival moments.",
+        "Ask about standby time if the schedule changes.",
+        "Confirm the final drop-off location for the end of the night."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -529,6 +559,7 @@
       "slug": "private-shuttle-egypt",
       "title": "Private Shuttle in Egypt: What to Expect",
       "excerpt": "How private shuttles work in Egypt and how to choose the right vehicle size.",
+      "image": "/side-view-valet-holding-baggage.jpg",
       "content": [
         "Private shuttles give you full control over timing and pickup points.",
         "You avoid shared rides, stops, and delays that reduce comfort.",
@@ -537,7 +568,12 @@
         "Airport arrivals should include flight details for tracking.",
         "Ask about child seats if you are traveling with kids.",
         "For long trips, SUVs and vans provide better leg room.",
-        "Request a driver who knows your hotel or destination area."
+        "Request a driver who knows your hotel or destination area.",
+        "Share hotel entry instructions for faster drop-off.",
+        "For tours, plan a flexible schedule with multiple stops.",
+        "Ask for bottled water and a clean interior on long rides.",
+        "Check if tolls and parking are included in the quote.",
+        "Confirm return transfers in advance for a smooth exit."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -545,6 +581,7 @@
       "slug": "group-transfer-guide",
       "title": "Group Transfers: From Vans to 50-Seat Buses",
       "excerpt": "A quick guide to selecting the best option for medium and large groups.",
+      "image": "/intercity-trips-bus.png",
       "content": [
         "Vans are ideal for 8-14 passengers with standard luggage.",
         "Coasters fit 22-30 passengers with extra space and comfort.",
@@ -552,7 +589,12 @@
         "Confirm pickup windows to keep group timing organized.",
         "Provide a passenger list if you need multiple stops or hotels.",
         "Ask for luggage capacity details for airport transfers.",
-        "For conferences, schedule return trips in advance."
+        "For conferences, schedule return trips in advance.",
+        "Assign a group leader to coordinate boarding and timing.",
+        "Share flight details if guests arrive on different flights.",
+        "Plan a meeting point to reduce delays at busy venues.",
+        "Ask about onboard storage for equipment or banners.",
+        "For weddings, arrange separate cars for VIP guests."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -560,6 +602,7 @@
       "slug": "airport-transfer-egypt",
       "title": "Airport Transfers in Egypt: Cairo, Sphinx, and Borg El Arab",
       "excerpt": "Understand how airport pickups work and what to prepare before arrival.",
+      "image": "/vip-service-vip-and-driver.png",
       "content": [
         "Share your flight number to track delays and arrival time.",
         "Confirm the pickup point and driver contact details.",
@@ -567,7 +610,12 @@
         "Arrivals at Cairo Airport can be busy, so plan for extra time.",
         "Sphinx and Borg El Arab have quicker exits but still need confirmation.",
         "International arrivals may require more time for immigration.",
-        "Keep your phone on for updates from the driver."
+        "Keep your phone on for updates from the driver.",
+        "For VIP arrivals, ask about meet-and-greet inside the terminal.",
+        "Save a backup contact number in case of roaming issues.",
+        "Choose a larger vehicle if you have sports equipment.",
+        "Confirm whether tolls and parking are included.",
+        "Provide hotel details to avoid gate delays on arrival."
       ],
       "publishedOn": "2026-02-01"
     },
@@ -575,6 +623,7 @@
       "slug": "cairo-alexandria-transfer",
       "title": "Cairo to Alexandria by Private Car",
       "excerpt": "Private transfers between Cairo and Alexandria with comfort and flexibility.",
+      "image": "/elegant-man-standing-his-car-taxi-services.jpg",
       "content": [
         "Private cars offer flexible departure times and direct routes.",
         "SUVs and vans are ideal for families and extra luggage.",
@@ -582,7 +631,33 @@
         "Plan your pickup time to avoid peak traffic in Cairo.",
         "Choose a vehicle with extra comfort for long-distance travel.",
         "Confirm the destination address and any hotel drop-off details.",
-        "For group trips, vans and coasters reduce travel complexity."
+        "For group trips, vans and coasters reduce travel complexity.",
+        "Request Wi-Fi or charging points for longer drives.",
+        "Schedule an early pickup if you want a full day in Alexandria.",
+        "Share the exact drop-off point for hotels with multiple gates.",
+        "Ask about return transfer options before you depart.",
+        "For night trips, confirm driver availability in advance."
+      ],
+      "publishedOn": "2026-02-01"
+    },
+    {
+      "slug": "vip-limousine-egypt",
+      "title": "VIP Limousine Service in Egypt: What Makes It Premium",
+      "excerpt": "A premium experience for executives, diplomats, and special guests.",
+      "image": "/driver-with-opened-car-door.jpg",
+      "content": [
+        "VIP service focuses on privacy, elegance, and precise timing.",
+        "Professional chauffeurs are trained for discretion and safety.",
+        "Vehicles are prepared with spotless interiors and premium comfort.",
+        "You can request multi-stop itineraries with flexible timing.",
+        "Airport VIP pickups include meet-and-greet options on request.",
+        "We coordinate with hotel security and concierge teams when needed.",
+        "Choose sedans for solo travelers and SUVs for small VIP groups.",
+        "On-board amenities can be arranged for long-distance transfers.",
+        "Dedicated support helps with last-minute changes and routing.",
+        "Fixed pricing ensures transparency for corporate bookings.",
+        "VIP transfers are ideal for conferences, events, and delegations.",
+        "Confirm vehicle branding preferences for a low-profile arrival."
       ],
       "publishedOn": "2026-02-01"
     }

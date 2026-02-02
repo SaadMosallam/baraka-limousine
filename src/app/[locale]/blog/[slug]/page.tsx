@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
@@ -11,6 +12,7 @@ type BlogPost = {
   excerpt: string;
   content: string[];
   publishedOn: string;
+  image: string;
 };
 
 type BlogPageProps = {
@@ -62,6 +64,13 @@ export default async function BlogPostPage(props: { params: Promise<{ locale: st
       <main className="mx-auto w-full max-w-3xl px-6 py-12">
         <h1 className="text-3xl font-bold">{post.title}</h1>
         <p className="mt-2 text-xs text-zinc-400">{post.publishedOn}</p>
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={1400}
+          height={900}
+          className="mt-6 h-64 w-full rounded-2xl object-cover"
+        />
         <div className="mt-8 space-y-4 text-sm text-zinc-600">
           {post.content.map((line) => (
             <p key={line}>{line}</p>
