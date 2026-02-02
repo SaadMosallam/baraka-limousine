@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { siteInfo } from "@/data/siteInfo";
 
@@ -12,6 +13,15 @@ export async function Footer(props: { locale: string }) {
     <footer className="border-t border-zinc-100 bg-zinc-50">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
         <div className="space-y-3">
+          <Link href={localePath("/")} className="inline-block">
+            <Image
+              src="/logo.svg"
+              alt={t("siteName")}
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+            />
+          </Link>
           <h3 className="text-lg font-semibold text-zinc-900">{t("siteName")}</h3>
           <p className="text-sm text-zinc-600">{t("siteTagline")}</p>
         </div>
