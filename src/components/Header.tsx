@@ -26,8 +26,8 @@ export async function Header(props: { locale: string }) {
   ];
 
   return (
-    <header className="w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex w-full h-fit max-w-6xl items-center justify-between gap-6 px-6 py-4">
+    <header className="sticky top-0 z-50 h-16 w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between gap-6 px-6">
         <Link href={localePath("/")} className="flex items-center">
           <Image
             src="/logo.svg"
