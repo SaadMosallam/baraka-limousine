@@ -32,7 +32,7 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
   const areas = t.raw("aboutServiceAreasItems") as string[];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
         <h1 className="text-3xl font-bold">{t("aboutTitle")}</h1>

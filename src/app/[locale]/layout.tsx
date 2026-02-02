@@ -8,6 +8,7 @@ import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { siteInfo } from "@/data/siteInfo";
 import "../../app/globals.css";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { Suspense } from "react";
 
 const geistSans = Geist({
@@ -68,7 +69,7 @@ export default async function LocaleLayout({
 
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <script
           type="application/ld+json"
@@ -89,17 +90,19 @@ export default async function LocaleLayout({
             }),
           }}
         />
-        <NextIntlClientProvider
-          locale={locale}
-          messages={messages}
-        >
-          <div className="pb-4 md:pb-0">
-            {children}
-          </div>
-          <Suspense fallback={<div>Loading...</div>}>
-            <StickyCtaBar locale={locale} />
-          </Suspense>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            <div className="pb-4 md:pb-0">
+              {children}
+            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+              <StickyCtaBar locale={locale} />
+            </Suspense>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html >
   );

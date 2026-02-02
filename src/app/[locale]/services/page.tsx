@@ -80,7 +80,7 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
   const pricingNotes = t.raw("servicesPricingNotes") as string[];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-6xl px-6 py-12">
         <h1 className="text-3xl font-bold">{t("servicesTitle")}</h1>

@@ -21,7 +21,7 @@ export async function Footer(props: { locale: string }) {
     `/${props.locale}${path === "/" ? "" : path}`;
 
   return (
-    <footer className="border-t border-zinc-100 bg-zinc-50">
+    <footer className="border-t border-zinc-100 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
         <div className="space-y-3">
           <Link href={localePath("/")} className="inline-block">
@@ -33,25 +33,25 @@ export async function Footer(props: { locale: string }) {
               className="h-12 w-auto"
             />
           </Link>
-          <h3 className="text-lg font-semibold text-zinc-900">{t("siteName")}</h3>
-          <p className="text-sm text-zinc-600">{t("siteTagline")}</p>
+          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{t("siteName")}</h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">{t("siteTagline")}</p>
         </div>
-        <div className="space-y-2 text-sm text-zinc-600">
-          <p className="font-semibold text-zinc-900">{t("footerContactTitle")}</p>
+        <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="font-semibold text-zinc-900 dark:text-zinc-100">{t("footerContactTitle")}</p>
           <p className="flex items-start gap-2">
-            <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-emerald-600" />
+            <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
             <span>{t("contactAddress")}</span>
           </p>
           <p className="flex items-center gap-2">
-            <Clock size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+            <Clock size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             <span>{t("contactHours")}</span>
           </p>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline" href={`tel:${siteInfo.phoneE164}`}>
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE164}`}>
             <PhoneCall size={18} weight="duotone" className="shrink-0" />
             {siteInfo.phoneDisplay}
           </a>
           <a
-            className="flex items-center gap-2 text-emerald-700 hover:underline"
+            className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400"
             href={`https://wa.me/${siteInfo.whatsappE164}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -59,32 +59,32 @@ export async function Footer(props: { locale: string }) {
             <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
             {t("ctaWhatsapp")}
           </a>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline" href={`mailto:${siteInfo.email}`}>
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`mailto:${siteInfo.email}`}>
             <Envelope size={18} weight="duotone" className="shrink-0" />
             {siteInfo.email}
           </a>
         </div>
-        <div className="space-y-2 text-sm text-zinc-600">
-          <p className="font-semibold text-zinc-900">{t("footerQuickLinks")}</p>
-          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/services")}>
-            <Car size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+        <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="font-semibold text-zinc-900 dark:text-zinc-100">{t("footerQuickLinks")}</p>
+          <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/services")}>
+            <Car size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navServices")}
           </Link>
-          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/blog")}>
-            <Article size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+          <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/blog")}>
+            <Article size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navBlog")}
           </Link>
-          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/about")}>
-            <Info size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+          <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/about")}>
+            <Info size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navAbout")}
           </Link>
-          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/contact")}>
-            <ChatCircle size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+          <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/contact")}>
+            <ChatCircle size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navContact")}
           </Link>
         </div>
       </div>
-      <div className="border-t border-zinc-200 py-4 text-center text-xs text-zinc-500">
+      <div className="border-t border-zinc-200 py-4 text-center text-xs text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
         {t("footerRights")}
       </div>
     </footer>

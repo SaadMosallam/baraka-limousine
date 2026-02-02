@@ -29,7 +29,7 @@ export function StickyCtaBar({ locale }: StickyCtaBarProps) {
       </a>
       <a
         href={`tel:${siteInfo.phoneE164}`}
-        className="flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-zinc-200 bg-white text-zinc-700 shadow-lg shadow-black/15 transition-transform hover:scale-105 hover:bg-zinc-50 active:scale-95"
+        className="flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-zinc-200 bg-white text-zinc-700 shadow-lg shadow-black/15 transition-transform hover:scale-105 hover:bg-zinc-50 active:scale-95 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
         aria-label={t("ctaCallNow")}
       >
         <PhoneCall size={26} weight="duotone" />

@@ -87,7 +87,7 @@ export default async function BlogPostPage(props: { params: Promise<{ locale: st
   const PostIcon = BLOG_SLUG_ICONS[post.slug] ?? MapTrifold;
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-3xl px-6 py-12">
         <article>

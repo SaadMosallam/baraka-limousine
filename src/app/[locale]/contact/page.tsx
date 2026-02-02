@@ -30,19 +30,19 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
   const t = await getTranslations({ locale });
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
-        <h1 className="text-3xl font-bold">{t("contactTitle")}</h1>
-        <p className="mt-3 text-sm text-zinc-600">{t("contactSubtitle")}</p>
-        <div className="mt-8 grid gap-8 rounded-3xl border border-zinc-100 bg-zinc-50 p-8 md:grid-cols-[2fr,1fr]">
-          <div className="space-y-4 text-sm text-zinc-600">
+        <h1 className="text-3xl font-bold dark:text-zinc-100">{t("contactTitle")}</h1>
+        <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">{t("contactSubtitle")}</p>
+        <div className="mt-8 grid gap-8 rounded-3xl border border-zinc-100 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900 md:grid-cols-[2fr,1fr]">
+          <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
             <p>{t("contactAddress")}</p>
             <p>{t("contactHours")}</p>
-            <a className="block text-emerald-700" href={`tel:${siteInfo.phoneE164}`}>
+            <a className="block text-emerald-700 dark:text-emerald-400 hover:underline" href={`tel:${siteInfo.phoneE164}`}>
               {siteInfo.phoneDisplay}
             </a>
-            <a className="block text-emerald-700" href={`mailto:${siteInfo.email}`}>
+            <a className="block text-emerald-700 dark:text-emerald-400 hover:underline" href={`mailto:${siteInfo.email}`}>
               {siteInfo.email}
             </a>
           </div>
@@ -50,7 +50,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
             <ContactActions locale={locale} />
             <a
               href={`https://wa.me/${siteInfo.whatsappE164}`}
-              className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50"
+              className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-900/30"
               target="_blank"
               rel="noopener noreferrer"
             >

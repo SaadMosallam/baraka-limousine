@@ -77,7 +77,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
         <div className="space-y-6 rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm">

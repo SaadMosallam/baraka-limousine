@@ -32,7 +32,7 @@ export async function ContactActions(props: ContactActionsProps) {
   const whatsappSecondaryDefault =
     "border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366]/10";
   const phoneSecondaryDefault =
-    "border border-zinc-200 text-zinc-900 hover:bg-zinc-50";
+    "border border-zinc-200 text-zinc-900 hover:bg-zinc-50 dark:border-zinc-500 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   const whatsappPrimaryOnDark =
     "border border-white bg-white text-emerald-700 hover:bg-emerald-50";
@@ -76,7 +76,7 @@ export async function ContactActions(props: ContactActionsProps) {
         <PhoneCall
           size={size === "sm" ? 14 : 16}
           weight="duotone"
-          className={contrast === "onDark" ? "text-white" : "text-zinc-700"}
+          className={contrast === "onDark" ? "text-white" : "text-zinc-700 dark:text-zinc-200"}
         />
         {t("ctaCallNow")}
       </a>

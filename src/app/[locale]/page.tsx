@@ -129,7 +129,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
   };
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
 
       {/* HERO */}
@@ -144,19 +144,19 @@ export default async function HomePage({ params }: { params: { locale: string } 
 
 
         {/* HIGHLIGHTS */}
-        <section className="mt-12 rounded-3xl bg-emerald-50 p-8">
+        <section className="mt-12 rounded-3xl bg-emerald-50 p-8 dark:bg-emerald-950/30 dark:border dark:border-emerald-900/30">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {highlights.map((item, index) => {
               const Icon = highlightIcons[index] ?? Star;
               return (
-                <div key={item.title} className="rounded-xl bg-white p-4">
+                <div key={item.title} className="rounded-xl bg-white p-4 dark:bg-zinc-900 dark:border dark:border-zinc-800">
                   <div className="flex items-start gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
                       <Icon size={18} weight="duotone" />
                     </span>
                     <div>
-                      <p className="font-semibold">{item.title}</p>
-                      <p className="text-xs text-zinc-500">{item.subtitle}</p>
+                      <p className="font-semibold dark:text-zinc-100">{item.title}</p>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400">{item.subtitle}</p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
 
         {/* SERVICES */}
         <section className="mt-16 space-y-8">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-bold dark:text-zinc-100">
             {t("servicesTitle")}
           </h2>
 
@@ -221,17 +221,17 @@ export default async function HomePage({ params }: { params: { locale: string } 
         {/* INTRO */}
         <section className="mt-16 grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">{t("homeIntroTitle")}</h2>
+            <h2 className="text-2xl font-bold dark:text-zinc-100">{t("homeIntroTitle")}</h2>
             {introParagraphs.map((paragraph) => (
               <p key={paragraph} className="text-sm text-zinc-600">
                 {paragraph}
               </p>
             ))}
           </div>
-          <div className="rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">{t("homeCapacityTitle")}</h3>
-            <p className="mt-2 text-sm text-zinc-600">{t("homeCapacityText")}</p>
-            <div className="mt-4 space-y-2 text-xs text-zinc-500">
+          <div className="rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <h3 className="text-lg font-semibold dark:text-zinc-100">{t("homeCapacityTitle")}</h3>
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{t("homeCapacityText")}</p>
+            <div className="mt-4 space-y-2 text-xs text-zinc-500 dark:text-zinc-400">
               {coverageItems.map((item) => (
                 <p key={item} className="flex items-center gap-2">
                   <MapPinLine size={14} weight="duotone" className="text-emerald-600" />
@@ -243,14 +243,14 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* FLEET */}
-        <section className="mt-16 space-y-6 rounded-3xl border border-emerald-100 bg-emerald-50 p-8">
+        <section className="mt-16 space-y-6 rounded-3xl border border-emerald-100 bg-emerald-50 p-8 dark:border-emerald-900/40 dark:bg-emerald-950/30">
           <div>
-            <h2 className="text-2xl font-bold">{t("homeFleetTitle")}</h2>
-            <p className="mt-2 text-sm text-emerald-700">{t("homeFleetSubtitle")}</p>
+            <h2 className="text-2xl font-bold dark:text-zinc-100">{t("homeFleetTitle")}</h2>
+            <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-400">{t("homeFleetSubtitle")}</p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {fleetItems.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-white p-4">
+              <div key={item.title} className="rounded-2xl bg-white p-4 dark:bg-zinc-900 dark:border dark:border-zinc-800">
                 <div className="flex items-start gap-3">
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                     <Bus size={18} weight="duotone" />
@@ -273,7 +273,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {testimonials.map((item) => (
-              <div key={item.name} className="rounded-2xl border border-zinc-100 bg-white p-5 shadow-sm">
+              <div key={item.name} className="rounded-2xl border border-zinc-100 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
                 <div className="flex items-start gap-3">
                   <div className="relative size-12 shrink-0 overflow-hidden rounded-full bg-zinc-100">
                     <Image
@@ -284,13 +284,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
                       sizes="48px"
                     />
                   </div>
-                  <div className="min-w-0 flex-1 text-xs text-zinc-500">
-                    <p className="font-semibold text-zinc-900">{item.name}</p>
+                  <div className="min-w-0 flex-1 text-xs text-zinc-500 dark:text-zinc-400">
+                    <p className="font-semibold text-zinc-900 dark:text-zinc-100">{item.name}</p>
                     <p>{item.role}</p>
                     <p>{item.location}</p>
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-zinc-600">&ldquo;{item.quote}&rdquo;</p>
+                <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">&ldquo;{item.quote}&rdquo;</p>
                 <div className="mt-3 flex items-center gap-1 text-emerald-600">
                   {[...Array(5)].map((_, index) => (
                     <Star key={index} size={14} weight="fill" />
@@ -303,23 +303,23 @@ export default async function HomePage({ params }: { params: { locale: string } 
 
         {/* ROUTES & TRUST */}
         <section className="mt-16 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-semibold">{t("homeRoutesTitle")}</h2>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+          <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <h2 className="text-lg font-semibold dark:text-zinc-100">{t("homeRoutesTitle")}</h2>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               {routesItems.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <MapTrifold size={16} weight="duotone" className="text-emerald-600" />
+                  <MapTrifold size={16} weight="duotone" className="text-emerald-600 dark:text-emerald-400" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-semibold">{t("homeTrustTitle")}</h2>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+          <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <h2 className="text-lg font-semibold dark:text-zinc-100">{t("homeTrustTitle")}</h2>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               {trustItems.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <ShieldCheck size={16} weight="duotone" className="text-emerald-600" />
+                  <ShieldCheck size={16} weight="duotone" className="text-emerald-600 dark:text-emerald-400" />
                   {item}
                 </li>
               ))}
@@ -328,13 +328,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* FLEET SPECS */}
-        <section className="mt-16 rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold">{t("homeFleetSpecsTitle")}</h2>
+        <section className="mt-16 rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold dark:text-zinc-100">{t("homeFleetSpecsTitle")}</h2>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             {fleetSpecs.map((item) => (
-              <div key={item} className="rounded-xl bg-zinc-50 p-4 text-sm text-zinc-600">
+              <div key={item} className="rounded-xl bg-zinc-50 p-4 text-sm text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 dark:border dark:border-zinc-700">
                 <span className="flex items-center gap-2">
-                  <Car size={16} weight="duotone" className="text-emerald-600" />
+                  <Car size={16} weight="duotone" className="text-emerald-600 dark:text-emerald-400" />
                   {item}
                 </span>
               </div>
@@ -343,13 +343,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* PRICING */}
-        <section className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50 p-8">
-          <h2 className="text-2xl font-bold">{t("homePricingTitle")}</h2>
-          <p className="mt-2 text-sm text-emerald-700">{t("homePricingSubtitle")}</p>
-          <ul className="mt-4 space-y-2 text-sm text-zinc-600">
+        <section className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50 p-8 dark:border-emerald-900/40 dark:bg-emerald-950/30">
+          <h2 className="text-2xl font-bold dark:text-zinc-100">{t("homePricingTitle")}</h2>
+          <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-400">{t("homePricingSubtitle")}</p>
+          <ul className="mt-4 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
             {pricingNotes.map((item) => (
               <li key={item} className="flex items-center gap-2">
-                <CurrencyCircleDollar size={16} weight="duotone" className="text-emerald-600" />
+                <CurrencyCircleDollar size={16} weight="duotone" className="text-emerald-600 dark:text-emerald-400" />
                 {item}
               </li>
             ))}
@@ -357,31 +357,31 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* CTA */}
-        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-emerald-600 p-10 text-white md:flex-row md:items-center md:justify-between">
+        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-emerald-600 p-10 text-white dark:bg-emerald-900 dark:border dark:border-emerald-800 md:flex-row md:items-center md:justify-between">
           <div className="flex w-fit items-center justify-center">
             <Image
               src="/book-now.svg"
               alt={t("homeCtaTitle")}
               width={120}
               height={120}
-              className="h-[120px] w-auto"
+              className="h-[120px] w-auto opacity-90 dark:opacity-95"
             />
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold dark:text-white">
               {t("homeCtaTitle")}
             </h2>
-            <p className="text-sm text-emerald-100">
+            <p className="text-sm text-emerald-100 dark:text-emerald-200">
               {t("homeCtaSubtitle")}
             </p>
           </div>
-          <div className="w-full shrink-0 rounded-2xl bg-white px-6 py-4 shadow-lg sm:w-auto">
+          <div className="w-full shrink-0 rounded-2xl bg-white px-6 py-4 shadow-lg dark:bg-zinc-800 dark:border dark:border-zinc-700 sm:w-auto">
             <ContactActions locale={locale} variant="primary" fullWidthOnMobile />
           </div>
         </section>
 
         {/* CONTACT */}
-        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-zinc-50 p-8 md:flex-row md:items-center">
+        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-zinc-50 p-8 dark:bg-zinc-900 dark:border dark:border-zinc-800 md:flex-row md:items-center">
           <div className="flex w-fit items-center justify-center">
             <Image
               src="/phone-call-location-pin.webp"
@@ -392,15 +392,15 @@ export default async function HomePage({ params }: { params: { locale: string } 
             />
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold dark:text-zinc-100">
               {t("contactTitle")}
             </h2>
 
-            <p className="text-sm text-zinc-600">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">
               {t("contactAddress")}
             </p>
 
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-400 dark:text-zinc-500">
               {t("homeContactEmailHint", {
                 email: siteInfo.email
               })}
