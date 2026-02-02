@@ -125,7 +125,8 @@ export function HeroCarousel({
 
                                     <div className="w-full max-w-6xl px-6 md:px-0 md:ps-20">
                                         <div
-                                            className={`mx-auto min-w-0 max-w-[18rem] rounded-2xl bg-white/30 px-4 py-3 shadow-lg backdrop-blur-sm dark:bg-black/30 dark:shadow-black/20 sm:max-w-sm sm:px-5 sm:py-4 md:max-w-xl md:rounded-3xl md:px-7 md:py-6 lg:max-w-2xl break-words ${locale === "ar"
+                                            key={`hero-card-${slide.id}-${selectedIndex}`}
+                                            className={`mx-auto min-w-0 max-w-[18rem] rounded-2xl bg-white/30 px-4 py-3 shadow-lg backdrop-blur-sm dark:bg-black/30 dark:shadow-black/20 sm:max-w-sm sm:px-5 sm:py-4 md:max-w-xl md:rounded-3xl md:px-7 md:py-6 lg:max-w-2xl break-words animate-in fade-in slide-in-from-bottom-4 duration-[1500ms] ${locale === "ar"
                                                 ? "text-center md:ml-auto md:mr-0 md:text-right"
                                                 : "text-center md:mr-auto md:ml-0 md:text-left"
                                                 }`}
