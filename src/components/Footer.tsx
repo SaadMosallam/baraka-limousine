@@ -1,6 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import {
+  Article,
+  Car,
+  ChatCircle,
+  Clock,
+  Envelope,
+  Info,
+  MapPin,
+  PhoneCall,
+  WhatsappLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import { siteInfo } from "@/data/siteInfo";
 
 export async function Footer(props: { locale: string }) {
@@ -27,35 +38,48 @@ export async function Footer(props: { locale: string }) {
         </div>
         <div className="space-y-2 text-sm text-zinc-600">
           <p className="font-semibold text-zinc-900">{t("footerContactTitle")}</p>
-          <p>{t("contactAddress")}</p>
-          <p>{t("contactHours")}</p>
-          <a className="block text-emerald-700" href={`tel:${siteInfo.phoneE164}`}>
+          <p className="flex items-start gap-2">
+            <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-emerald-600" />
+            <span>{t("contactAddress")}</span>
+          </p>
+          <p className="flex items-center gap-2">
+            <Clock size={18} weight="duotone" className="shrink-0 text-emerald-600" />
+            <span>{t("contactHours")}</span>
+          </p>
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline" href={`tel:${siteInfo.phoneE164}`}>
+            <PhoneCall size={18} weight="duotone" className="shrink-0" />
             {siteInfo.phoneDisplay}
           </a>
           <a
-            className="block text-emerald-700"
+            className="flex items-center gap-2 text-emerald-700 hover:underline"
             href={`https://wa.me/${siteInfo.whatsappE164}`}
             target="_blank"
             rel="noopener noreferrer"
           >
+            <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
             {t("ctaWhatsapp")}
           </a>
-          <a className="block text-emerald-700" href={`mailto:${siteInfo.email}`}>
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline" href={`mailto:${siteInfo.email}`}>
+            <Envelope size={18} weight="duotone" className="shrink-0" />
             {siteInfo.email}
           </a>
         </div>
         <div className="space-y-2 text-sm text-zinc-600">
           <p className="font-semibold text-zinc-900">{t("footerQuickLinks")}</p>
-          <Link className="block hover:text-emerald-700" href={localePath("/services")}>
+          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/services")}>
+            <Car size={18} weight="duotone" className="shrink-0 text-emerald-600" />
             {t("navServices")}
           </Link>
-          <Link className="block hover:text-emerald-700" href={localePath("/blog")}>
+          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/blog")}>
+            <Article size={18} weight="duotone" className="shrink-0 text-emerald-600" />
             {t("navBlog")}
           </Link>
-          <Link className="block hover:text-emerald-700" href={localePath("/about")}>
+          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/about")}>
+            <Info size={18} weight="duotone" className="shrink-0 text-emerald-600" />
             {t("navAbout")}
           </Link>
-          <Link className="block hover:text-emerald-700" href={localePath("/contact")}>
+          <Link className="flex items-center gap-2 hover:text-emerald-700" href={localePath("/contact")}>
+            <ChatCircle size={18} weight="duotone" className="shrink-0 text-emerald-600" />
             {t("navContact")}
           </Link>
         </div>
