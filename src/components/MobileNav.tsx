@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
- import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react";
+import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react";
 
 type MobileNavLink = {
   href: string;
@@ -23,8 +23,6 @@ type ServiceItem = {
 
 type MobileNavProps = {
   locale: string;
-  nextLocale: string;
-  languageLabel: string;
   menuLabel: string;
   closeLabel: string;
   servicesLabel: string;
@@ -38,8 +36,6 @@ type MobileNavProps = {
 
 export function MobileNav({
   locale,
-  nextLocale,
-  languageLabel,
   menuLabel,
   closeLabel,
   servicesLabel,
@@ -102,10 +98,10 @@ export function MobileNav({
             />
             <div
               className={`absolute top-0 ${locale === "ar" ? "left-0" : "right-0"} h-full w-80 max-w-[85%] bg-white/90 backdrop-blur-lg p-6 shadow-xl transition-transform ${open
-                  ? "translate-x-0"
-                  : locale === "ar"
-                    ? "-translate-x-full"
-                    : "translate-x-full"
+                ? "translate-x-0"
+                : locale === "ar"
+                  ? "-translate-x-full"
+                  : "translate-x-full"
                 }`}
             >
               <div className="mb-6 flex items-center justify-between">
@@ -144,42 +140,33 @@ export function MobileNav({
                       >
                         {servicesLabel}
                       </Link>
-                       {serviceItems.map((service) => (
-                         <Link
-                           key={service.id}
-                           href={localePath(`/services/${service.id}`)}
-                           className="hover:text-emerald-600"
-                           onClick={close}
-                         >
-                           {service.title}
-                         </Link>
-                       ))}
+                      {serviceItems.map((service) => (
+                        <Link
+                          key={service.id}
+                          href={localePath(`/services/${service.id}`)}
+                          className="hover:text-emerald-600"
+                          onClick={close}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-                <Link
-                  href={`/${nextLocale}`}
-                  className="text-xs font-semibold text-zinc-500 hover:text-emerald-700"
-                  onClick={close}
-                >
-                  {languageLabel}
-                </Link>
               </nav>
               <div className="mt-6 flex flex-col gap-2">
                 <a
                   href={`tel:${phone}`}
-                  className={`inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700 ${
-                    locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
-                  }`}
+                  className={`inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700 ${locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
+                    }`}
                 >
                   <PhoneCall size={16} weight="duotone" className="text-white" />
                   {callLabel}
                 </a>
                 <a
                   href={`https://wa.me/${whatsapp}`}
-                  className={`inline-flex items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 ${
-                    locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
-                  }`}
+                  className={`inline-flex items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 ${locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
+                    }`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { ContactActions } from "@/components/ContactActions";
 import { siteInfo } from "@/data/siteInfo";
+import { isServiceExcludedFromNav } from "@/data/serviceFilters";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
@@ -85,7 +86,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const highlights = t.raw("homeHighlights") as Highlight[];
   const allServices = t.raw("servicesItems") as ServiceItem[];
   const serviceItems = allServices.filter(
-    (service) => !["sedan", "suv", "van", "coaster", "bus"].includes(service.id)
+    (service) => !isServiceExcludedFromNav(service.id)
   );
   const heroSlides = allServices
     .filter((service) =>
@@ -356,7 +357,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* CTA */}
-        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-emerald-600 p-10 text-white md:flex-row md:items-center">
+        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-emerald-600 p-10 text-white md:flex-row md:items-center md:justify-between">
           <div className="flex w-fit items-center justify-center">
             <Image
               src="/book-now.svg"
@@ -373,6 +374,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
             <p className="text-sm text-emerald-100">
               {t("homeCtaSubtitle")}
             </p>
+          </div>
+          <div className="w-full shrink-0 rounded-2xl bg-white px-6 py-4 shadow-lg sm:w-auto">
+            <ContactActions locale={locale} variant="primary" fullWidthOnMobile />
           </div>
         </section>
 

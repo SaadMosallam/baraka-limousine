@@ -1,5 +1,6 @@
 export const siteInfo = {
-  phone: "01104451718",
-  whatsapp: "01104451718",
-  email: "info@barakalimousine.com"
+  phoneDisplay: "01104451718",
+  phoneE164: "201104451718",
+  whatsappE164: "201104451718",
+  email: "info@barakalimousine.com",
 };

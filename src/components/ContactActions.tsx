@@ -7,6 +7,8 @@ type ContactActionsProps = {
   variant?: "primary" | "secondary";
   contrast?: "default" | "onDark";
   size?: "sm" | "md";
+  /** On small screens, stack and span full width; from sm up, inline. */
+  fullWidthOnMobile?: boolean;
   locale: string;
 };
 
@@ -16,6 +18,7 @@ export async function ContactActions(props: ContactActionsProps) {
     variant = "primary",
     contrast = "default",
     size = "md",
+    fullWidthOnMobile = false,
     locale,
   } = props;
   const t = await getTranslations({ locale });
@@ -45,14 +48,19 @@ export async function ContactActions(props: ContactActionsProps) {
   const phoneSecondary =
     contrast === "onDark" ? phoneSecondaryOnDark : phoneSecondaryDefault;
 
+  const wrapperLayout = fullWidthOnMobile
+    ? "w-full flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+    : "flex flex-wrap gap-3";
+  const linkFullWidth = fullWidthOnMobile ? "w-full sm:w-auto justify-center" : "";
+
   const whatsappClass = `${base} ${variant === "secondary" ? whatsappSecondary : whatsappPrimary
-    } ${layout}`;
-  const phoneClass = `${base} ${phoneSecondary} ${layout}`;
+    } ${layout} ${linkFullWidth}`;
+  const phoneClass = `${base} ${phoneSecondary} ${layout} ${linkFullWidth}`;
 
   return (
-    <div className={`flex flex-wrap gap-3 ${className ?? ""}`}>
+    <div className={`${wrapperLayout} ${className ?? ""}`}>
       <a
-        href={`https://wa.me/${siteInfo.whatsapp}`}
+        href={`https://wa.me/${siteInfo.whatsappE164}`}
         className={whatsappClass}
         target="_blank"
         rel="noopener noreferrer"
@@ -64,7 +72,7 @@ export async function ContactActions(props: ContactActionsProps) {
         />
         {t("ctaWhatsapp")}
       </a>
-      <a href={`tel:${siteInfo.phone}`} className={phoneClass}>
+      <a href={`tel:${siteInfo.phoneE164}`} className={phoneClass}>
         <PhoneCall
           size={size === "sm" ? 14 : 16}
           weight="duotone"

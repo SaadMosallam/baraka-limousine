@@ -144,7 +144,7 @@ export function HeroCarousel({
                                                     }`}
                                             >
                                                 <a
-                                                    href={`https://wa.me/${siteInfo.whatsapp}`}
+                                                    href={`https://wa.me/${siteInfo.whatsappE164}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-50 md:px-5 md:text-sm"
@@ -154,7 +154,7 @@ export function HeroCarousel({
                                                 </a>
 
                                                 <a
-                                                    href={`tel:${siteInfo.phone}`}
+                                                    href={`tel:${siteInfo.phoneE164}`}
                                                     className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
                                                 >
                                                     <PhoneCall size={14} weight="duotone" />

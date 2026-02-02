@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactActions } from "./ContactActions";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { getTranslations } from "next-intl/server";
 import { MobileNav } from "@/components/MobileNav";
 import { ServicesDropdown } from "@/components/ServicesDropdown";
 import { siteInfo } from "@/data/siteInfo";
+import { isServiceExcludedFromNav } from "@/data/serviceFilters";
 import { Suspense } from "react";
 import { Translate } from "@phosphor-icons/react/dist/ssr";
 
@@ -16,7 +18,7 @@ export async function Header(props: { locale: string }) {
     `/${locale}${path === "/" ? "" : path}`;
 
   const serviceItems = (t.raw("servicesItems") as { id: string; title: string }[])
-    .filter((item) => !["sedan", "suv", "van", "coaster", "bus"].includes(item.id))
+    .filter((item) => !isServiceExcludedFromNav(item.id))
     .map((item) => ({ id: item.id, title: item.title }));
 
   const navLinks = [
@@ -53,33 +55,40 @@ export async function Header(props: { locale: string }) {
           <Link href={localePath("/contact")} className="hover:text-emerald-600">
             {t("navContact")}
           </Link>
-          <Link
-            href={`/${nextLocale}`}
+          <LanguageSwitcher
+            nextLocale={nextLocale}
             className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1 text-xs font-semibold text-zinc-600 hover:border-emerald-600 hover:text-emerald-700"
           >
             <Translate size={14} weight="duotone" />
             {t("navLanguage")}
-          </Link>
+          </LanguageSwitcher>
         </nav>
         <div className="hidden md:block">
           <ContactActions variant="primary" locale={locale} />
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <MobileNav
-            locale={locale}
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher
             nextLocale={nextLocale}
-            languageLabel={t("navLanguage")}
-            menuLabel={t("navMenu")}
-            closeLabel={t("navClose")}
-            servicesLabel={t("navServices")}
-            serviceItems={serviceItems}
-            links={navLinks}
-            callLabel={t("ctaCallNow")}
-            whatsappLabel={t("ctaWhatsapp")}
-            phone={siteInfo.phone}
-            whatsapp={siteInfo.whatsapp}
-          />
-        </Suspense>
+            className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-2 text-xs font-semibold text-zinc-600 hover:border-emerald-600 hover:text-emerald-700"
+          >
+            <Translate size={14} weight="duotone" />
+            {t("navLanguage")}
+          </LanguageSwitcher>
+          <Suspense fallback={<div>Loading...</div>}>
+            <MobileNav
+              locale={locale}
+              menuLabel={t("navMenu")}
+              closeLabel={t("navClose")}
+              servicesLabel={t("navServices")}
+              serviceItems={serviceItems}
+              links={navLinks}
+              callLabel={t("ctaCallNow")}
+              whatsappLabel={t("ctaWhatsapp")}
+              phone={siteInfo.phoneE164}
+              whatsapp={siteInfo.whatsappE164}
+            />
+          </Suspense>
+        </div>
       </div>
     </header>
   );

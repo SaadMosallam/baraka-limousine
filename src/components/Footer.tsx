@@ -19,12 +19,12 @@ export async function Footer(props: { locale: string }) {
           <p className="font-semibold text-zinc-900">{t("footerContactTitle")}</p>
           <p>{t("contactAddress")}</p>
           <p>{t("contactHours")}</p>
-          <a className="block text-emerald-700" href={`tel:${siteInfo.phone}`}>
-            {siteInfo.phone}
+          <a className="block text-emerald-700" href={`tel:${siteInfo.phoneE164}`}>
+            {siteInfo.phoneDisplay}
           </a>
           <a
             className="block text-emerald-700"
-            href={`https://wa.me/${siteInfo.whatsapp}`}
+            href={`https://wa.me/${siteInfo.whatsappE164}`}
             target="_blank"
             rel="noopener noreferrer"
           >

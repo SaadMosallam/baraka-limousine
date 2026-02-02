@@ -39,8 +39,8 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
           <div className="space-y-4 text-sm text-zinc-600">
             <p>{t("contactAddress")}</p>
             <p>{t("contactHours")}</p>
-            <a className="block text-emerald-700" href={`tel:${siteInfo.phone}`}>
-              {siteInfo.phone}
+            <a className="block text-emerald-700" href={`tel:${siteInfo.phoneE164}`}>
+              {siteInfo.phoneDisplay}
             </a>
             <a className="block text-emerald-700" href={`mailto:${siteInfo.email}`}>
               {siteInfo.email}
@@ -49,7 +49,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
           <div className="space-y-4">
             <ContactActions locale={locale} />
             <a
-              href={`https://wa.me/${siteInfo.whatsapp}`}
+              href={`https://wa.me/${siteInfo.whatsappE164}`}
               className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50"
               target="_blank"
               rel="noopener noreferrer"

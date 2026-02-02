@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import type React from "react";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import {
+  AirplaneTakeoff,
+  Briefcase,
+  Bus,
+  Car,
+  CheckCircle,
+  Crown,
+  Heart,
+  MapPin,
+  MapTrifold,
+} from "@phosphor-icons/react/dist/ssr";
 
 type BlogPost = {
   slug: string;
@@ -13,6 +25,19 @@ type BlogPost = {
   content: string[];
   publishedOn: string;
   image: string;
+};
+
+const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.png";
+
+const BLOG_SLUG_ICONS: Record<string, React.ElementType> = {
+  "airport-limo-tips": AirplaneTakeoff,
+  "business-travel-comfort": Briefcase,
+  "wedding-limo-guide": Heart,
+  "private-shuttle-egypt": Car,
+  "group-transfer-guide": Bus,
+  "airport-transfer-egypt": MapPin,
+  "cairo-alexandria-transfer": MapTrifold,
+  "vip-limousine-egypt": Crown,
 };
 
 type BlogPageProps = {
@@ -58,24 +83,50 @@ export default async function BlogPostPage(props: { params: Promise<{ locale: st
     notFound();
   }
 
+  const imageSrc = post.image?.trim() ? post.image : BLOG_IMAGE_FALLBACK;
+  const PostIcon = BLOG_SLUG_ICONS[post.slug] ?? MapTrifold;
+
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-3xl px-6 py-12">
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-        <p className="mt-2 text-xs text-zinc-400">{post.publishedOn}</p>
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={1400}
-          height={900}
-          className="mt-6 h-64 w-full rounded-2xl object-cover"
-        />
-        <div className="mt-8 space-y-4 text-sm text-zinc-600">
-          {post.content.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </div>
+        <article>
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-zinc-100">
+            <Image
+              src={imageSrc}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
+          <header className="mt-8 flex items-start gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <PostIcon size={22} weight="duotone" />
+            </span>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
+              <p className="mt-2 text-sm text-zinc-500">{post.publishedOn}</p>
+            </div>
+          </header>
+          <div className="prose prose-zinc mt-8 max-w-none">
+            <p className="text-base font-medium text-zinc-600">{post.excerpt}</p>
+            <ul className="mt-8 list-none space-y-3 p-0">
+              {post.content.map((line) => (
+                <li key={line} className="flex items-start gap-3 text-sm leading-relaxed text-zinc-600">
+                  <CheckCircle
+                    size={20}
+                    weight="duotone"
+                    className="mt-0.5 shrink-0 text-emerald-600"
+                  />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
       </main>
       <Footer locale={locale} />
     </div>

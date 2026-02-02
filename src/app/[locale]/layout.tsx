@@ -7,6 +7,8 @@ import { locales, Locale } from "@/i18n/config";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { siteInfo } from "@/data/siteInfo";
 import "../../app/globals.css";
+import { StickyCtaBar } from "@/components/StickyCtaBar";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,7 +78,7 @@ export default async function LocaleLayout({
               "@type": "LocalBusiness",
               name: t("metaSiteTitle"),
               description: t("metaSiteDescription"),
-              telephone: siteInfo.phone,
+              telephone: siteInfo.phoneE164,
               email: siteInfo.email,
               address: {
                 "@type": "PostalAddress",
@@ -91,9 +93,14 @@ export default async function LocaleLayout({
           locale={locale}
           messages={messages}
         >
-          {children}
+          <div className="pb-4 md:pb-0">
+            {children}
+          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <StickyCtaBar locale={locale} />
+          </Suspense>
         </NextIntlClientProvider>
       </body>
-    </html>
+    </html >
   );
 }
