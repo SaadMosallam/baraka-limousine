@@ -123,23 +123,23 @@ export function HeroCarousel({
                                 {/* Content: bottom on mobile, centered on desktop */}
                                 <div className="absolute inset-0 flex items-end pb-16 md:items-center md:pb-0">
 
-                                    <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-10 lg:px-12">
+                                    <div className="w-full max-w-6xl px-6 md:px-0 md:ps-20">
                                         <div
-                                            className={`min-w-0 max-w-xl text-white break-words ${locale === "ar"
-                                                ? "text-center md:text-right md:ml-auto"
-                                                : "text-center md:text-left md:mr-auto"
+                                            className={`mx-auto min-w-0 max-w-[18rem] rounded-2xl bg-white/30 px-4 py-3 shadow-lg backdrop-blur-sm dark:bg-black/30 dark:shadow-black/20 sm:max-w-sm sm:px-5 sm:py-4 md:max-w-xl md:rounded-3xl md:px-7 md:py-6 lg:max-w-2xl break-words ${locale === "ar"
+                                                ? "text-center md:ml-auto md:mr-0 md:text-right"
+                                                : "text-center md:mr-auto md:ml-0 md:text-left"
                                                 }`}
                                         >
-                                            <h1 className="text-xl font-bold leading-tight sm:text-2xl md:text-4xl break-words">
+                                            <h1 className="text-lg font-bold leading-tight text-zinc-900 break-words dark:text-white sm:text-2xl md:text-4xl lg:text-5xl">
                                                 {slide.title}
                                             </h1>
 
-                                            <p className="mt-3 max-w-xl text-xs text-white/90 sm:text-sm md:text-base break-words">
+                                            <p className="mt-2 max-w-xl text-xs font-medium text-zinc-800 break-words dark:font-normal dark:text-zinc-300 sm:mt-3 sm:text-sm md:text-base md:text-lg">
                                                 {slide.description}
                                             </p>
 
                                             <div
-                                                className={`mt-5 flex flex-wrap justify-center gap-2 md:gap-3 ${locale === "ar"
+                                                className={`mt-3 flex flex-wrap justify-center gap-1.5 sm:mt-5 sm:gap-2 md:gap-3 ${locale === "ar"
                                                     ? "md:justify-end md:flex-row-reverse"
                                                     : "md:justify-start"
                                                     }`}
@@ -149,18 +149,18 @@ export function HeroCarousel({
                                                     <>
                                                         <a
                                                             href={`tel:${siteInfo.phoneE164}`}
-                                                            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-transparent px-3 py-2 text-xs font-semibold text-zinc-800 hover:bg-zinc-100 dark:border-zinc-500 dark:text-zinc-200 dark:hover:bg-zinc-800 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
                                                         >
-                                                            <PhoneCall size={14} weight="duotone" />
+                                                            <PhoneCall size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
                                                             {callLabel}
                                                         </a>
                                                         <a
                                                             href={`https://wa.me/${siteInfo.whatsappE164}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] md:px-5 md:text-sm"
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
                                                         >
-                                                            <WhatsappLogo size={14} weight="duotone" />
+                                                            <WhatsappLogo size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
                                                             {whatsappLabel}
                                                         </a>
                                                     </>
@@ -170,16 +170,16 @@ export function HeroCarousel({
                                                             href={`https://wa.me/${siteInfo.whatsappE164}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] md:px-5 md:text-sm"
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
                                                         >
-                                                            <WhatsappLogo size={14} weight="duotone" />
+                                                            <WhatsappLogo size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
                                                             {whatsappLabel}
                                                         </a>
                                                         <a
                                                             href={`tel:${siteInfo.phoneE164}`}
-                                                            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-transparent px-3 py-2 text-xs font-semibold text-zinc-800 hover:bg-zinc-100 dark:border-zinc-500 dark:text-zinc-200 dark:hover:bg-zinc-800 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
                                                         >
-                                                            <PhoneCall size={14} weight="duotone" />
+                                                            <PhoneCall size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
                                                             {callLabel}
                                                         </a>
                                                     </>
