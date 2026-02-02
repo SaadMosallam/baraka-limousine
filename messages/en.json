@@ -57,31 +57,36 @@
       "name": "Ahmed M.",
       "role": "Cairo Airport pickup",
       "quote": "Driver was on time and the car was spotless. Smooth ride to downtown Cairo.",
-      "location": "Cairo"
+      "location": "Cairo",
+      "avatar": ""
     },
     {
       "name": "Sara K.",
       "role": "Family transfer",
       "quote": "We booked an SUV for our family. Plenty of space and very comfortable.",
-      "location": "Giza"
+      "location": "Giza",
+      "avatar": ""
     },
     {
       "name": "Omar H.",
       "role": "Group trip",
       "quote": "Van was perfect for our group transfer to Alexandria. Professional service.",
-      "location": "Alexandria"
+      "location": "Alexandria",
+      "avatar": ""
     },
     {
       "name": "Mona R.",
       "role": "Airport transfer",
       "quote": "Smooth pickup at Cairo Airport and a very comfortable sedan.",
-      "location": "Cairo"
+      "location": "Cairo",
+      "avatar": ""
     },
     {
       "name": "Khaled S.",
       "role": "Business travel",
       "quote": "Reliable timing and professional driver for daily meetings.",
-      "location": "New Cairo"
+      "location": "New Cairo",
+      "avatar": ""
     }
   ],
   "homePricingTitle": "Pricing guidance",
@@ -231,13 +236,13 @@
       "id": "suv",
       "title": "SUV (6-7 seats)",
       "description": "Roomy SUVs for families, extra luggage, and long-distance travel.",
-      "image": "/driver-with-opened-car-door.jpg"
+      "image": "/wedding-services-two-cars.png"
     },
     {
       "id": "van",
       "title": "Van (8-14 seats)",
       "description": "Private shuttle vans for small groups and tour programs.",
-      "image": "/side-view-valet-holding-baggage.jpg"
+      "image": "/intercity-trips-bus.png"
     },
     {
       "id": "coaster",
@@ -483,6 +488,7 @@
     }
   ],
   "serviceDetails": "Service details",
+  "backToHome": "Back to home",
   "serviceFaqTitle": "Frequently asked questions",
   "blogTitle": "Blog",
   "blogReadMore": "Read more",

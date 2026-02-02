@@ -122,7 +122,7 @@ export function HeroCarousel({
 
                                 {/* Content: bottom on mobile, centered on desktop */}
                                 <div className="absolute inset-0 flex items-end pb-10 md:items-center md:pb-0">
-                                    <div className="mx-auto w-full max-w-6xl px-6 md:px-20 lg:px-24">
+                                    <div className="mx-auto w-full max-w-6xl">
                                         <div
                                             className={`max-w-xl text-white ${locale === "ar"
                                                 ? "text-center md:text-right md:ml-auto"

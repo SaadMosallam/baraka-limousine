@@ -48,6 +48,8 @@ type TestimonialItem = {
   role: string;
   quote: string;
   location: string;
+  /** Optional: path to avatar image (e.g. "/avatars/ahmed.jpg"). Omit or leave empty to use placeholder. */
+  avatar?: string;
 };
 
 type ServiceItem = {
@@ -271,12 +273,23 @@ export default async function HomePage({ params }: { params: { locale: string } 
           <div className="grid gap-4 md:grid-cols-3">
             {testimonials.map((item) => (
               <div key={item.name} className="rounded-2xl border border-zinc-100 bg-white p-5 shadow-sm">
-                <p className="text-sm text-zinc-600">&ldquo;{item.quote}&rdquo;</p>
-                <div className="mt-4 text-xs text-zinc-500">
-                  <p className="font-semibold text-zinc-900">{item.name}</p>
-                  <p>{item.role}</p>
-                  <p>{item.location}</p>
+                <div className="flex items-start gap-3">
+                  <div className="relative size-12 shrink-0 overflow-hidden rounded-full bg-zinc-100">
+                    <Image
+                      src={item.avatar && item.avatar.trim() !== "" ? item.avatar : "/avatar-placeholder.svg"}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 text-xs text-zinc-500">
+                    <p className="font-semibold text-zinc-900">{item.name}</p>
+                    <p>{item.role}</p>
+                    <p>{item.location}</p>
+                  </div>
                 </div>
+                <p className="mt-4 text-sm text-zinc-600">&ldquo;{item.quote}&rdquo;</p>
                 <div className="mt-3 flex items-center gap-1 text-emerald-600">
                   {[...Array(5)].map((_, index) => (
                     <Star key={index} size={14} weight="fill" />
