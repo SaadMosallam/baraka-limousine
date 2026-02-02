@@ -7,6 +7,7 @@ import {
   ChatCircle,
   Clock,
   Info,
+  MapPin,
   PhoneCall,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
@@ -72,6 +73,10 @@ export async function Footer(props: { locale: string }) {
           <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/services")}>
             <Car size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navServices")}
+          </Link>
+          <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/locations")}>
+            <MapPin size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
+            {t("navLocations")}
           </Link>
           <Link className="flex items-center gap-2 hover:text-emerald-700 dark:hover:text-emerald-400" href={localePath("/blog")}>
             <Article size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />

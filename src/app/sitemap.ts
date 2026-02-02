@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import enMessages from "../../messages/en.json";
+import { locations } from "@/data/locations";
 
 const baseUrl = "https://baraka-limousine.com";
 const locales = ["ar", "en"] as const;
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = ["/", "/about", "/services", "/blog", "/contact"];
   const blogPosts = enMessages.blogPosts;
   const serviceItems = enMessages.servicesItems;
+  const locationItems = locations;
 
   const staticRoutes = locales.flatMap((locale) =>
     staticPaths.map((path) => ({
@@ -30,5 +32,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticRoutes, ...blogRoutes, ...serviceRoutes];
+  const locationRoutes = locales.flatMap((locale) => [
+    {
+      url: `${baseUrl}/${locale}/locations`,
+      lastModified: new Date(),
+    },
+    ...locationItems.map((location) => ({
+      url: `${baseUrl}/${locale}/locations/${location.slug}`,
+      lastModified: new Date(),
+    })),
+  ]);
+
+  return [...staticRoutes, ...blogRoutes, ...serviceRoutes, ...locationRoutes];
 }
