@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ContactActions } from "@/components/ContactActions";
 import { siteInfo } from "@/data/siteInfo";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 export async function generateMetadata({
   params,
@@ -35,27 +35,31 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
         <h1 className="text-3xl font-bold dark:text-zinc-100">{t("contactTitle")}</h1>
         <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">{t("contactSubtitle")}</p>
-        <div className="mt-8 grid gap-8 rounded-3xl border border-zinc-100 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900 md:grid-cols-[2fr,1fr]">
-          <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
-            <p>{t("contactAddress")}</p>
-            <p>{t("contactHours")}</p>
-            <a className="block text-emerald-700 dark:text-emerald-400 hover:underline" href={`tel:${siteInfo.phoneE164}`}>
-              {siteInfo.phoneDisplay}
-            </a>
-            <a className="block text-emerald-700 dark:text-emerald-400 hover:underline" href={`mailto:${siteInfo.email}`}>
-              {siteInfo.email}
-            </a>
-          </div>
+        <div className="mt-8 space-y-6 rounded-3xl border border-zinc-100 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900">
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">{t("contactHours")}</p>
           <div className="space-y-4">
-            <ContactActions locale={locale} />
-            <a
-              href={`https://wa.me/${siteInfo.whatsappE164}`}
-              className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-900/30"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("contactWhatsappAction")}
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="font-semibold text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay}</span>
+              <a className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE164}`} target="_blank" rel="noopener noreferrer">
+                <WhatsappLogo size={18} weight="duotone" />
+                {t("ctaWhatsapp")}
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE164}`}>
+                <PhoneCall size={18} weight="duotone" />
+                {t("ctaCallNow")}
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="font-semibold text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay2}</span>
+              <a className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE1642}`} target="_blank" rel="noopener noreferrer">
+                <WhatsappLogo size={18} weight="duotone" />
+                {t("ctaWhatsapp")}
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE1642}`}>
+                <PhoneCall size={18} weight="duotone" />
+                {t("ctaCallNow")}
+              </a>
+            </div>
           </div>
         </div>
       </main>

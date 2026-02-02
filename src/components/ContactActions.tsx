@@ -28,14 +28,14 @@ export async function ContactActions(props: ContactActionsProps) {
       : "inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition-colors";
   const layout = locale === "ar" ? "flex-row-reverse gap-2" : "gap-2";
   const whatsappPrimaryDefault =
-    "border border-[#25D366] bg-[#25D366]/10 text-[#1f8f4a] hover:bg-[#25D366]/20";
+    "border border-[#25D366] bg-[#25D366] text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a]";
   const whatsappSecondaryDefault =
     "border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366]/10";
   const phoneSecondaryDefault =
     "border border-zinc-200 text-zinc-900 hover:bg-zinc-50 dark:border-zinc-500 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   const whatsappPrimaryOnDark =
-    "border border-white bg-white text-emerald-700 hover:bg-emerald-50";
+    "border border-[#25D366] bg-[#25D366] text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a]";
   const whatsappSecondaryOnDark =
     "border border-white/60 text-white hover:bg-white/10";
   const phoneSecondaryOnDark =
@@ -68,7 +68,7 @@ export async function ContactActions(props: ContactActionsProps) {
         <WhatsappLogo
           size={size === "sm" ? 14 : 16}
           weight="duotone"
-          className={contrast === "onDark" ? "text-emerald-700" : "text-[#25D366]"}
+          className={variant === "secondary" ? (contrast === "onDark" ? "text-white" : "text-[#25D366]") : "text-white"}
         />
         {t("ctaWhatsapp")}
       </a>

@@ -144,23 +144,46 @@ export function HeroCarousel({
                                                     : "md:justify-start"
                                                     }`}
                                             >
-                                                <a
-                                                    href={`https://wa.me/${siteInfo.whatsappE164}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-50 md:px-5 md:text-sm"
-                                                >
-                                                    <WhatsappLogo size={14} weight="duotone" />
-                                                    {whatsappLabel}
-                                                </a>
-
-                                                <a
-                                                    href={`tel:${siteInfo.phoneE164}`}
-                                                    className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
-                                                >
-                                                    <PhoneCall size={14} weight="duotone" />
-                                                    {callLabel}
-                                                </a>
+                                                {/* DOM order for RTL: Call then WhatsApp so with flex-row-reverse WhatsApp appears first (left); for LTR WhatsApp first in DOM = first visually */}
+                                                {locale === "ar" ? (
+                                                    <>
+                                                        <a
+                                                            href={`tel:${siteInfo.phoneE164}`}
+                                                            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
+                                                        >
+                                                            <PhoneCall size={14} weight="duotone" />
+                                                            {callLabel}
+                                                        </a>
+                                                        <a
+                                                            href={`https://wa.me/${siteInfo.whatsappE164}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] md:px-5 md:text-sm"
+                                                        >
+                                                            <WhatsappLogo size={14} weight="duotone" />
+                                                            {whatsappLabel}
+                                                        </a>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <a
+                                                            href={`https://wa.me/${siteInfo.whatsappE164}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-2 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-2 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] md:px-5 md:text-sm"
+                                                        >
+                                                            <WhatsappLogo size={14} weight="duotone" />
+                                                            {whatsappLabel}
+                                                        </a>
+                                                        <a
+                                                            href={`tel:${siteInfo.phoneE164}`}
+                                                            className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
+                                                        >
+                                                            <PhoneCall size={14} weight="duotone" />
+                                                            {callLabel}
+                                                        </a>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

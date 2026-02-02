@@ -6,9 +6,7 @@ import {
   Car,
   ChatCircle,
   Clock,
-  Envelope,
   Info,
-  MapPin,
   PhoneCall,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
@@ -38,18 +36,10 @@ export async function Footer(props: { locale: string }) {
         </div>
         <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
           <p className="font-semibold text-zinc-900 dark:text-zinc-100">{t("footerContactTitle")}</p>
-          <p className="flex items-start gap-2">
-            <MapPin size={18} weight="duotone" className="mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-            <span>{t("contactAddress")}</span>
-          </p>
           <p className="flex items-center gap-2">
             <Clock size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             <span>{t("contactHours")}</span>
           </p>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE164}`}>
-            <PhoneCall size={18} weight="duotone" className="shrink-0" />
-            {siteInfo.phoneDisplay}
-          </a>
           <a
             className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400"
             href={`https://wa.me/${siteInfo.whatsappE164}`}
@@ -57,11 +47,24 @@ export async function Footer(props: { locale: string }) {
             rel="noopener noreferrer"
           >
             <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
-            {t("ctaWhatsapp")}
+            {siteInfo.phoneDisplay} – {t("ctaWhatsapp")}
           </a>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`mailto:${siteInfo.email}`}>
-            <Envelope size={18} weight="duotone" className="shrink-0" />
-            {siteInfo.email}
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE164}`}>
+            <PhoneCall size={18} weight="duotone" className="shrink-0" />
+            {siteInfo.phoneDisplay}
+          </a>
+          <a
+            className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400"
+            href={`https://wa.me/${siteInfo.whatsappE1642}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
+            {siteInfo.phoneDisplay2} – {t("ctaWhatsapp")}
+          </a>
+          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE1642}`}>
+            <PhoneCall size={18} weight="duotone" className="shrink-0" />
+            {siteInfo.phoneDisplay2}
           </a>
         </div>
         <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">

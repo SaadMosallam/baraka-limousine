@@ -29,9 +29,11 @@ import {
   Lightning,
   MapPinLine,
   MapTrifold,
+  PhoneCall,
   ShieldCheck,
   Star,
   Van,
+  WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 type Highlight = {
@@ -391,20 +393,37 @@ export default async function HomePage({ params }: { params: { locale: string } 
               className="h-20 w-auto"
             />
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h2 className="text-2xl font-bold dark:text-zinc-100">
               {t("contactTitle")}
             </h2>
-
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              {t("contactAddress")}
+              {t("contactHours")}
             </p>
-
-            <p className="text-xs text-zinc-400 dark:text-zinc-500">
-              {t("homeContactEmailHint", {
-                email: siteInfo.email
-              })}
-            </p>
+            <div className="space-y-3 text-sm">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-medium text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay}</span>
+                <a className="inline-flex items-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE164}`} target="_blank" rel="noopener noreferrer">
+                  <WhatsappLogo size={14} weight="duotone" />
+                  {t("ctaWhatsapp")}
+                </a>
+                <a className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE164}`}>
+                  <PhoneCall size={14} weight="duotone" />
+                  {t("ctaCallNow")}
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-medium text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay2}</span>
+                <a className="inline-flex items-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE1642}`} target="_blank" rel="noopener noreferrer">
+                  <WhatsappLogo size={14} weight="duotone" />
+                  {t("ctaWhatsapp")}
+                </a>
+                <a className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE1642}`}>
+                  <PhoneCall size={14} weight="duotone" />
+                  {t("ctaCallNow")}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

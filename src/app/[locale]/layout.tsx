@@ -79,13 +79,7 @@ export default async function LocaleLayout({
               "@type": "LocalBusiness",
               name: t("metaSiteTitle"),
               description: t("metaSiteDescription"),
-              telephone: siteInfo.phoneE164,
-              email: siteInfo.email,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: t("contactAddress"),
-                addressCountry: "EG",
-              },
+              telephone: [siteInfo.phoneE164, siteInfo.phoneE1642],
               areaServed: "Egypt",
             }),
           }}
