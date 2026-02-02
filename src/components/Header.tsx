@@ -27,15 +27,15 @@ export async function Header(props: { locale: string }) {
 
   return (
     <header className="w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4">
+      <div className="mx-auto flex w-full h-fit max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <Link href={localePath("/")} className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt={t("siteName")}
-            width={64}
-            height={64}
+            width={40}
+            height={40}
             priority
-            className="h-auto w-auto"
+            className="h-10 w-10 md:h-16 md:w-16 object-contain"
           />
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-semibold text-zinc-700 md:flex">
