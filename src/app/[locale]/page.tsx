@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import type React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,6 +7,7 @@ import { HeroCarousel } from "@/components/HeroCarousel";
 import { ContactActions } from "@/components/ContactActions";
 import { siteInfo } from "@/data/siteInfo";
 import { isServiceExcludedFromNav } from "@/data/serviceFilters";
+import { serviceIcons } from "@/data/serviceIcons";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
@@ -19,9 +19,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  AirplaneTakeoff,
-  Briefcase,
   Bus,
+  Briefcase,
   Car,
   Crown,
   CurrencyCircleDollar,
@@ -116,19 +115,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
     CurrencyCircleDollar,
     Lightning,
   ];
-
-  const serviceIcons: Record<string, React.ElementType> = {
-    airport: AirplaneTakeoff,
-    business: Briefcase,
-    wedding: Heart,
-    trips: MapTrifold,
-    vip: Crown,
-    sedan: Car,
-    suv: Car,
-    van: Van,
-    coaster: Bus,
-    bus: Bus,
-  };
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">

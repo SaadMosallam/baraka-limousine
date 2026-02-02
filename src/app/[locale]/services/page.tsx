@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { ContactActions } from "@/components/ContactActions";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import { serviceIcons } from "@/data/serviceIcons";
 import {
   Card,
   CardContent,
@@ -16,8 +17,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  AirplaneTakeoff,
-  Briefcase,
   Bus,
   Car,
   CheckCircle,
@@ -55,19 +54,6 @@ export async function generateMetadata({
     twitter: buildTwitter(title, description),
   };
 }
-
-const serviceIcons: Record<string, React.ElementType> = {
-  airport: AirplaneTakeoff,
-  business: Briefcase,
-  wedding: Heart,
-  trips: MapTrifold,
-  vip: Crown,
-  sedan: Car,
-  suv: Car,
-  van: Van,
-  coaster: Bus,
-  bus: Bus,
-};
 
 export default async function ServicesPage(props: { params: Promise<{ locale: string }> }) {
   const { locale } = await props.params;

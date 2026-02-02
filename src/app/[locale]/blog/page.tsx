@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import { BLOG_IMAGE_FALLBACK } from "@/data/blog";
 import {
   Card,
   CardContent,
@@ -22,8 +23,6 @@ type BlogPost = {
   publishedOn: string;
   image: string;
 };
-
-const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.webp";
 
 type BlogPageProps = {
   params: Promise<{ locale: "ar" | "en" }>;

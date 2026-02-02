@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { BLOG_IMAGE_FALLBACK } from "@/data/blog";
 import {
   AirplaneTakeoff,
   Briefcase,
@@ -26,8 +27,6 @@ type BlogPost = {
   publishedOn: string;
   image: string;
 };
-
-const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.webp";
 
 const BLOG_SLUG_ICONS: Record<string, React.ElementType> = {
   "airport-limo-tips": AirplaneTakeoff,
