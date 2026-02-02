@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { Globe, Star } from "@phosphor-icons/react/dist/ssr";
 
 type AboutPageProps = {
   params: Promise<{ locale: "ar" | "en" }>;
@@ -62,7 +63,10 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
             <h2 className="text-lg font-semibold">{t("aboutValuesTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               {values.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <Star size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -70,7 +74,10 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
             <h2 className="text-lg font-semibold">{t("aboutServiceAreasTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               {areas.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <Globe size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

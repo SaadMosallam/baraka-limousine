@@ -215,11 +215,6 @@
       "description": "Modern vehicles and highly trained drivers for VIP comfort."
     },
     {
-      "id": "borg-elarab",
-      "title": "Borg El Arab Airport Limo",
-      "description": "Safe, smooth rides to Borg El Arab Airport at great rates."
-    },
-    {
       "id": "sedan",
       "title": "Private Sedan (4 seats)",
       "description": "Comfortable sedans for airport transfers, business rides, and daily trips."
@@ -471,19 +466,6 @@
         {
           "q": "Is chauffeur service included?",
           "a": "Yes, all VIP rides include professional chauffeurs."
-        }
-      ]
-    },
-    {
-      "id": "borg-elarab",
-      "faqs": [
-        {
-          "q": "Do you serve Borg El Arab Airport?",
-          "a": "Yes, we offer transfers to and from Borg El Arab Airport."
-        },
-        {
-          "q": "Can I book a return trip?",
-          "a": "Yes, round trips can be scheduled in advance."
         }
       ]
     }

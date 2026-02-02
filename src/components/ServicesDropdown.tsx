@@ -1,6 +1,6 @@
-"use client";
+ "use client";
 
-import Link from "next/link";
+ import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+ import { CaretDown } from "@phosphor-icons/react";
 
 type ServiceItem = {
   id: string;
@@ -26,10 +27,15 @@ export function ServicesDropdown({ locale, label, items }: ServicesDropdownProps
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-         className="cursor-pointer hover:text-emerald-600"
+          className="group inline-flex cursor-pointer items-center gap-1 hover:text-emerald-600"
           aria-haspopup="menu"
         >
           {label}
+          <CaretDown
+            size={14}
+            weight="bold"
+            className="transition-transform group-data-[state=open]:rotate-180"
+          />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-60">

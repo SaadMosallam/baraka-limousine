@@ -4,6 +4,12 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import {
+  CheckCircle,
+  ClipboardText,
+  CurrencyCircleDollar,
+  MapTrifold,
+} from "@phosphor-icons/react/dist/ssr";
 
 type ServiceItem = {
   id: string;
@@ -56,7 +62,10 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
             <h2 className="text-lg font-semibold">{t("servicesBenefitsTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               {benefits.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <CheckCircle size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -64,7 +73,10 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
             <h2 className="text-lg font-semibold">{t("servicesProcessTitle")}</h2>
             <ol className="mt-3 space-y-2 text-sm text-zinc-600">
               {processSteps.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <ClipboardText size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ol>
           </div>
@@ -74,7 +86,10 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
             <h2 className="text-lg font-semibold">{t("servicesRoutesTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               {routes.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <MapTrifold size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -82,7 +97,10 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
             <h2 className="text-lg font-semibold">{t("servicesPricingTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               {pricingNotes.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex items-center gap-2">
+                  <CurrencyCircleDollar size={16} weight="duotone" className="text-emerald-600" />
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

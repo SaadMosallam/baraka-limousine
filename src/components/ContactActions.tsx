@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { siteInfo } from "@/data/siteInfo";
+import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 type ContactActionsProps = {
   className?: string;
@@ -17,11 +18,14 @@ export async function ContactActions(props: ContactActionsProps) {
   const secondary =
     "border border-zinc-200 text-zinc-900 hover:bg-zinc-50";
 
-  const buttonClass = `${base} ${variant === "primary" ? primary : secondary}`;
+  const buttonClass = `${base} ${
+    variant === "primary" ? primary : secondary
+  } ${locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"}`;
 
   return (
     <div className={`flex flex-wrap gap-3 ${className ?? ""}`}>
       <a href={`tel:${siteInfo.phone}`} className={buttonClass}>
+        <PhoneCall size={16} weight="duotone" className="text-white" />
         {t("ctaCallNow")}
       </a>
       <a
@@ -30,6 +34,7 @@ export async function ContactActions(props: ContactActionsProps) {
         target="_blank"
         rel="noopener noreferrer"
       >
+        <WhatsappLogo size={16} weight="duotone" className="text-white" />
         {t("ctaWhatsapp")}
       </a>
     </div>

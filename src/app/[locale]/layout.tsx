@@ -41,6 +41,10 @@ export async function generateMetadata({
     },
     description,
     keywords: t.raw("metaKeywords") as string[],
+    icons: {
+      icon: "/logo.png",
+      apple: "/logo.png",
+    },
     alternates: buildAlternates(locale, ""),
     openGraph: buildOpenGraph(locale, "", title, description),
     twitter: buildTwitter(title, description),

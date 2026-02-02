@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+ import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react";
 
 type MobileNavLink = {
   href: string;
@@ -167,16 +168,22 @@ export function MobileNav({
               <div className="mt-6 flex flex-col gap-2">
                 <a
                   href={`tel:${phone}`}
-                  className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700"
+                  className={`inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700 ${
+                    locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
+                  }`}
                 >
+                  <PhoneCall size={16} weight="duotone" className="text-white" />
                   {callLabel}
                 </a>
                 <a
                   href={`https://wa.me/${whatsapp}`}
-                  className="inline-flex items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50"
+                  className={`inline-flex items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 ${
+                    locale === "ar" ? "flex-row-reverse gap-2" : "gap-2"
+                  }`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <WhatsappLogo size={16} weight="duotone" className="text-emerald-600" />
                   {whatsappLabel}
                 </a>
               </div>
