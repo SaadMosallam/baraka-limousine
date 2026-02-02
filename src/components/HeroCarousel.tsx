@@ -27,7 +27,7 @@ type HeroCarouselProps = {
     callLabel: string;
 };
 
-const AUTOPLAY_MS = 30000;
+const AUTOPLAY_MS = 30_000;
 const TICK_MS = 100;
 
 export function HeroCarousel({
@@ -40,6 +40,7 @@ export function HeroCarousel({
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [progress, setProgress] = useState(0);
 
+    // refs must be stable at render time
     const lastChangeRef = useRef(0);
     const isInteractingRef = useRef(false);
 
@@ -105,7 +106,7 @@ export function HeroCarousel({
                 <CarouselContent>
                     {slides.map((slide, index) => (
                         <CarouselItem key={slide.id} className="p-0">
-                            {/* IMAGE DEFINES HEIGHT */}
+                            {/* Image defines height */}
                             <div className="relative w-full aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-black">
                                 <Image
                                     src={slide.image}
@@ -116,45 +117,47 @@ export function HeroCarousel({
                                     className="object-cover"
                                 />
 
-                                {/* Dark overlay */}
+                                {/* Overlay */}
                                 <div className="absolute inset-0 bg-black/35" />
 
-                                {/* CENTERED CONTENT (THE FIX) */}
-                                <div className="absolute inset-0 flex items-center">
-                                    <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+                                {/* Content: bottom on mobile, centered on desktop */}
+                                <div className="absolute inset-0 flex items-end pb-10 md:items-center md:pb-0">
+                                    <div className="mx-auto w-full max-w-6xl px-6 md:px-20 lg:px-24">
                                         <div
                                             className={`max-w-xl text-white ${locale === "ar"
-                                                    ? "text-center md:text-right md:ms-auto"
-                                                    : "text-center md:text-left md:me-auto"
+                                                ? "text-center md:text-right md:ml-auto"
+                                                : "text-center md:text-left md:mr-auto"
                                                 }`}
                                         >
-                                            <h1 className="text-2xl md:text-4xl font-bold leading-tight">
+                                            <h1 className="text-xl font-bold leading-tight sm:text-2xl md:text-4xl">
                                                 {slide.title}
                                             </h1>
 
-                                            <p className="mt-3 text-sm md:text-base text-white/90">
+                                            <p className="mt-3 text-xs text-white/90 sm:text-sm md:text-base">
                                                 {slide.description}
                                             </p>
 
                                             <div
-                                                className={`mt-5 flex flex-wrap gap-3 justify-center md:justify-start ${locale === "ar" ? "md:flex-row-reverse" : ""
+                                                className={`mt-5 flex flex-wrap justify-center gap-2 md:gap-3 ${locale === "ar"
+                                                    ? "md:justify-end md:flex-row-reverse"
+                                                    : "md:justify-start"
                                                     }`}
                                             >
                                                 <a
                                                     href={`https://wa.me/${siteInfo.whatsapp}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50"
+                                                    className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-50 md:px-5 md:text-sm"
                                                 >
-                                                    <WhatsappLogo size={16} weight="duotone" />
+                                                    <WhatsappLogo size={14} weight="duotone" />
                                                     {whatsappLabel}
                                                 </a>
 
                                                 <a
                                                     href={`tel:${siteInfo.phone}`}
-                                                    className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                                                    className="inline-flex items-center gap-2 rounded-full border border-white/60 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10 md:px-5 md:text-sm"
                                                 >
-                                                    <PhoneCall size={16} weight="duotone" />
+                                                    <PhoneCall size={14} weight="duotone" />
                                                     {callLabel}
                                                 </a>
                                             </div>
@@ -166,11 +169,24 @@ export function HeroCarousel({
                     ))}
                 </CarouselContent>
 
-                {/* Arrows (desktop only) */}
-                <CarouselPrevious className="left-4 top-1/2 hidden h-9 w-9 -translate-y-1/2 rounded-full bg-white/80 text-zinc-900 hover:bg-white md:flex" />
-                <CarouselNext className="right-4 top-1/2 hidden h-9 w-9 -translate-y-1/2 rounded-full bg-white/80 text-zinc-900 hover:bg-white md:flex" />
+                {/* Arrows (desktop only, RTL-aware) */}
+                {locale === "ar" ? (
+                    <>
+                        {/* RTL: LEFT = NEXT (arrow should point LEFT) */}
+                        <CarouselNext className="left-4 right-auto top-1/2 hidden h-10 w-10 -translate-y-1/2 rotate-180 rounded-full border-white/30 bg-white/80 text-zinc-900 hover:bg-white md:flex" />
+                        {/* RTL: RIGHT = PREV (arrow should point RIGHT) */}
+                        <CarouselPrevious className="right-4 left-auto top-1/2 hidden h-10 w-10 -translate-y-1/2 rotate-180 rounded-full border-white/30 bg-white/80 text-zinc-900 hover:bg-white md:flex" />
+                    </>
+                ) : (
+                    <>
+                        {/* LTR: LEFT = PREV */}
+                        <CarouselPrevious className="left-4 right-auto top-1/2 hidden h-10 w-10 -translate-y-1/2 rounded-full border-white/30 bg-white/80 text-zinc-900 hover:bg-white md:flex" />
+                        {/* LTR: RIGHT = NEXT */}
+                        <CarouselNext className="right-4 left-auto top-1/2 hidden h-10 w-10 -translate-y-1/2 rounded-full border-white/30 bg-white/80 text-zinc-900 hover:bg-white md:flex" />
+                    </>
+                )}
 
-                {/* Progress + dots */}
+                {/* Progress bars + dots */}
                 <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-2">
                     <div className="flex gap-1">
                         {slides.map((_, i) => (
@@ -185,21 +201,6 @@ export function HeroCarousel({
                                     />
                                 )}
                             </div>
-                        ))}
-                    </div>
-
-                    <div className="flex gap-2">
-                        {slides.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => {
-                                    isInteractingRef.current = true;
-                                    api?.scrollTo(i);
-                                }}
-                                aria-label={`Go to slide ${i + 1}`}
-                                className={`h-2 w-2 rounded-full ${i === selectedIndex ? "bg-white" : "bg-white/40"
-                                    }`}
-                            />
                         ))}
                     </div>
                 </div>

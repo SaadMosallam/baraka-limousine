@@ -4,17 +4,25 @@ import type React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { ContactActions } from "@/components/ContactActions";
 import { siteInfo } from "@/data/siteInfo";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   AirplaneTakeoff,
   Briefcase,
   Bus,
   Car,
   Crown,
-  Clock,
   CurrencyCircleDollar,
   Heart,
   Lightning,
@@ -46,6 +54,7 @@ type ServiceItem = {
   id: string;
   title: string;
   description: string;
+  image: string;
 };
 
 export async function generateMetadata({
@@ -68,13 +77,25 @@ export async function generateMetadata({
 
 export default async function HomePage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
+  const localeTyped = locale === "ar" || locale === "en" ? locale : "ar";
   const t = await getTranslations({ locale });
 
   const highlights = t.raw("homeHighlights") as Highlight[];
-  const serviceItems = (t.raw("servicesItems") as ServiceItem[]).filter(
-    (service) =>
-      !["sedan", "suv", "van", "coaster", "bus"].includes(service.id)
+  const allServices = t.raw("servicesItems") as ServiceItem[];
+  const serviceItems = allServices.filter(
+    (service) => !["sedan", "suv", "van", "coaster", "bus"].includes(service.id)
   );
+  const heroSlides = allServices
+    .filter((service) =>
+      ["airport", "business", "wedding", "vip", "trips"].includes(service.id)
+    )
+    .map((service) => ({
+      id: service.id,
+      title: service.title,
+      description: service.description,
+      image: service.image,
+    }));
+
   const introParagraphs = t.raw("homeIntroParagraphs") as string[];
   const fleetItems = t.raw("homeFleetItems") as FleetItem[];
   const coverageItems = t.raw("homeCoverageItems") as string[];
@@ -108,42 +129,16 @@ export default async function HomePage({ params }: { params: { locale: string } 
     <div className="min-h-screen bg-white text-zinc-900">
       <Header locale={locale} />
 
-      <main className="mx-auto w-full max-w-6xl px-6 pb-16 pt-12">
-        {/* HERO */}
-        <section className="grid items-center gap-10 md:grid-cols-2">
-          <div className="space-y-6">
-            <h1 className="text-3xl font-bold md:text-4xl">
-              {t("homeHeroTitle")}
-            </h1>
+      {/* HERO */}
+      <HeroCarousel
+        slides={heroSlides}
+        locale={localeTyped}
+        whatsappLabel={t("ctaWhatsapp")}
+        callLabel={t("ctaCallNow")}
+      />
 
-            <p className="text-base text-zinc-700">
-              {t("siteTagline")}
-            </p>
+      <main className="mx-auto w-full max-w-6xl px-6 pb-16">
 
-            <p className="text-sm text-zinc-500">
-              {t("homeHeroSubtitle")}
-            </p>
-
-            <div className="flex flex-col gap-4">
-              <ContactActions locale={locale} />
-              <div className="flex items-center gap-2 text-sm text-zinc-500">
-                <Clock size={16} weight="duotone" className="text-emerald-600" />
-                {t("siteHours")}
-              </div>
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-3xl bg-zinc-100">
-            <Image
-              src="/hero-image.png"
-              alt={t("homeHeroTitle")}
-              width={720}
-              height={540}
-              priority
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </section>
 
         {/* HIGHLIGHTS */}
         <section className="mt-12 rounded-3xl bg-emerald-50 p-8">
@@ -173,33 +168,51 @@ export default async function HomePage({ params }: { params: { locale: string } 
             {t("servicesTitle")}
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceItems.map((service) => {
               const Icon = serviceIcons[service.id] ?? Car;
               return (
-                <div key={service.id} className="rounded-xl bg-white p-6">
-                  <div className="flex items-start gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                      <Icon size={18} weight="duotone" />
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">{service.title}</h3>
-                      <p className="text-sm text-zinc-600">
-                        {service.description}
-                      </p>
-                    </div>
+                <Card key={service.id} className="overflow-hidden gap-0 py-0">
+                  <div className="relative h-44 w-full bg-zinc-100">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-black/10" />
                   </div>
-                </div>
+                  <CardHeader className="px-5 pb-2 pt-5">
+                    <div className="flex items-center gap-3">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                        <Icon size={18} weight="duotone" />
+                      </span>
+                      <CardTitle className="text-base">{service.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="px-5 pb-4 pt-0">
+                    <p className="text-sm text-zinc-600">{service.description}</p>
+                  </CardContent>
+                  <CardFooter className="flex flex-col items-stretch gap-3 border-t border-zinc-100 px-5 py-4">
+                    <Button asChild variant="secondary" className="rounded-full">
+                      <Link href={`/${locale}/services/${service.id}`}>
+                        {t("serviceDetails")}
+                      </Link>
+                    </Button>
+                    <ContactActions locale={locale} size="sm" />
+                  </CardFooter>
+                </Card>
               )
             })}
+            <div className="flex items-center justify-center md:col-span-2 lg:col-span-1">
+              <Button asChild variant="secondary" className="w-fit rounded-full">
+                <Link href={`/${locale}/services`}>
+                  {t("homeServicesCta")}
+                </Link>
+              </Button>
+            </div>
           </div>
-
-          <Link
-            href={`/${locale}/services`}
-            className="text-sm font-semibold text-emerald-700"
-          >
-            {t("homeServicesCta")}
-          </Link>
         </section>
 
         {/* INTRO */}

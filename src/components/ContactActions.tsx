@@ -6,14 +6,23 @@ type ContactActionsProps = {
   className?: string;
   variant?: "primary" | "secondary";
   contrast?: "default" | "onDark";
+  size?: "sm" | "md";
   locale: string;
 };
 
 export async function ContactActions(props: ContactActionsProps) {
-  const { className, variant = "primary", contrast = "default", locale } = props;
+  const {
+    className,
+    variant = "primary",
+    contrast = "default",
+    size = "md",
+    locale,
+  } = props;
   const t = await getTranslations({ locale });
   const base =
-    "inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition-colors";
+    size === "sm"
+      ? "inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold transition-colors"
+      : "inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition-colors";
   const layout = locale === "ar" ? "flex-row-reverse gap-2" : "gap-2";
   const whatsappPrimaryDefault =
     "border border-[#25D366] bg-[#25D366]/10 text-[#1f8f4a] hover:bg-[#25D366]/20";
@@ -49,7 +58,7 @@ export async function ContactActions(props: ContactActionsProps) {
         rel="noopener noreferrer"
       >
         <WhatsappLogo
-          size={16}
+          size={size === "sm" ? 14 : 16}
           weight="duotone"
           className={contrast === "onDark" ? "text-emerald-700" : "text-[#25D366]"}
         />
@@ -57,7 +66,7 @@ export async function ContactActions(props: ContactActionsProps) {
       </a>
       <a href={`tel:${siteInfo.phone}`} className={phoneClass}>
         <PhoneCall
-          size={16}
+          size={size === "sm" ? 14 : 16}
           weight="duotone"
           className={contrast === "onDark" ? "text-white" : "text-zinc-700"}
         />
