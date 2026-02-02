@@ -200,61 +200,61 @@
       "id": "airport",
       "title": "Airport Limousine Service",
       "description": "Transfers to and from all Egyptian airports with comfort, speed, and professional pickup.",
-      "image": "/airport-shuttle-single-person-with-luggage.png"
+      "image": "/airport-shuttle-single-person-with-luggage.webp"
     },
     {
       "id": "business",
       "title": "Business Service",
       "description": "Business comfort comes first with premium vehicles and professional drivers.",
-      "image": "/driver-dressed-elegant-costume.jpg"
+      "image": "/driver-dressed-elegant-costume.webp"
     },
     {
       "id": "wedding",
       "title": "Wedding Limousine",
       "description": "Luxury wedding cars for an unforgettable celebration.",
-      "image": "/black-bmw-decorated-with-white-wedding-bouquets.jpg"
+      "image": "/black-bmw-decorated-with-white-wedding-bouquets.webp"
     },
     {
       "id": "trips",
       "title": "Trips & Excursions",
       "description": "Intercity trips across Egypt with reliable service and fair pricing.",
-      "image": "/intercity-trips-bus.png"
+      "image": "/intercity-trips-bus.webp"
     },
     {
       "id": "vip",
       "title": "VIP Car Booking",
       "description": "Modern vehicles and highly trained drivers for VIP comfort.",
-      "image": "/driver-with-opened-car-door.jpg"
+      "image": "/driver-with-opened-car-door.webp"
     },
     {
       "id": "sedan",
       "title": "Private Sedan (4 seats)",
       "description": "Comfortable sedans for airport transfers, business rides, and daily trips.",
-      "image": "/elegant-man-standing-his-car-taxi-services.jpg"
+      "image": "/elegant-man-standing-his-car-taxi-services.webp"
     },
     {
       "id": "suv",
       "title": "SUV (6-7 seats)",
       "description": "Roomy SUVs for families, extra luggage, and long-distance travel.",
-      "image": "/wedding-services-two-cars.png"
+      "image": "/wedding-services-two-cars.webp"
     },
     {
       "id": "van",
       "title": "Van (8-14 seats)",
       "description": "Private shuttle vans for small groups and tour programs.",
-      "image": "/intercity-trips-bus.png"
+      "image": "/intercity-trips-bus.webp"
     },
     {
       "id": "coaster",
       "title": "Coaster (22-30 seats)",
       "description": "Mid-size buses for corporate and group transportation.",
-      "image": "/intercity-trips-bus.png"
+      "image": "/intercity-trips-bus.webp"
     },
     {
       "id": "bus",
       "title": "Bus (40-50 seats)",
       "description": "Full-size buses for events, delegations, and large group transfers.",
-      "image": "/intercity-trips-bus.png"
+      "image": "/intercity-trips-bus.webp"
     }
   ],
   "serviceDetailSections": [
@@ -497,7 +497,7 @@
       "slug": "airport-limo-tips",
       "title": "Tips for Booking an Airport Limo with Ease",
       "excerpt": "Learn the key steps to book an airport limo quickly and safely.",
-      "image": "/airport-shuttle-single-person-with-luggage.png",
+      "image": "/airport-shuttle-single-person-with-luggage.webp",
       "content": [
         "Book your ride early and confirm the exact pickup point inside the terminal.",
         "Share flight details so we can track delays and adjust the pickup time.",
@@ -521,7 +521,7 @@
       "slug": "business-travel-comfort",
       "title": "Business Comfort Starts with Transportation",
       "excerpt": "How business-class service helps save time and stay focused.",
-      "image": "/driver-dressed-elegant-costume.jpg",
+      "image": "/driver-dressed-elegant-costume.webp",
       "content": [
         "Business travel requires punctuality, privacy, and consistent service.",
         "Professional drivers respect schedules and plan the fastest routes.",
@@ -543,7 +543,7 @@
       "slug": "wedding-limo-guide",
       "title": "A Guide to Choosing the Right Wedding Limo",
       "excerpt": "Plan your wedding day with luxury cars and unique service.",
-      "image": "/young-handsome-business-man-delivering-bouquet-beautiful-flowers.jpg",
+      "image": "/black-bmw-decorated-with-white-wedding-bouquets.webp",
       "content": [
         "Choose a vehicle that matches the style of your wedding day.",
         "Book early to secure the exact model and color you prefer.",
@@ -565,7 +565,7 @@
       "slug": "private-shuttle-egypt",
       "title": "Private Shuttle in Egypt: What to Expect",
       "excerpt": "How private shuttles work in Egypt and how to choose the right vehicle size.",
-      "image": "/side-view-valet-holding-baggage.jpg",
+      "image": "/side-view-valet-holding-baggage.webp",
       "content": [
         "Private shuttles give you full control over timing and pickup points.",
         "You avoid shared rides, stops, and delays that reduce comfort.",
@@ -587,7 +587,7 @@
       "slug": "group-transfer-guide",
       "title": "Group Transfers: From Vans to 50-Seat Buses",
       "excerpt": "A quick guide to selecting the best option for medium and large groups.",
-      "image": "/intercity-trips-bus.png",
+      "image": "/intercity-trips-bus.webp",
       "content": [
         "Vans are ideal for 8-14 passengers with standard luggage.",
         "Coasters fit 22-30 passengers with extra space and comfort.",
@@ -608,7 +608,7 @@
       "slug": "airport-transfer-egypt",
       "title": "Airport Transfers in Egypt: Cairo, Sphinx, and Borg El Arab",
       "excerpt": "Understand how airport pickups work and what to prepare before arrival.",
-      "image": "/vip-service-vip-and-driver.png",
+      "image": "/vip-service-vip-and-driver.webp",
       "content": [
         "Share your flight number to track delays and arrival time.",
         "Confirm the pickup point and driver contact details.",
@@ -629,7 +629,7 @@
       "slug": "cairo-alexandria-transfer",
       "title": "Cairo to Alexandria by Private Car",
       "excerpt": "Private transfers between Cairo and Alexandria with comfort and flexibility.",
-      "image": "/elegant-man-standing-his-car-taxi-services.jpg",
+      "image": "/elegant-man-standing-his-car-taxi-services.webp",
       "content": [
         "Private cars offer flexible departure times and direct routes.",
         "SUVs and vans are ideal for families and extra luggage.",
@@ -650,7 +650,7 @@
       "slug": "vip-limousine-egypt",
       "title": "VIP Limousine Service in Egypt: What Makes It Premium",
       "excerpt": "A premium experience for executives, diplomats, and special guests.",
-      "image": "/driver-with-opened-car-door.jpg",
+      "image": "/driver-with-opened-car-door.webp",
       "content": [
         "VIP service focuses on privacy, elegance, and precise timing.",
         "Professional chauffeurs are trained for discretion and safety.",

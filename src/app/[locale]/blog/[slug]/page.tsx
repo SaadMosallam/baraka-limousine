@@ -27,7 +27,7 @@ type BlogPost = {
   image: string;
 };
 
-const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.png";
+const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.webp";
 
 const BLOG_SLUG_ICONS: Record<string, React.ElementType> = {
   "airport-limo-tips": AirplaneTakeoff,

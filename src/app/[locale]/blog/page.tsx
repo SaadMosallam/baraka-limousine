@@ -23,7 +23,7 @@ type BlogPost = {
   image: string;
 };
 
-const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.png";
+const BLOG_IMAGE_FALLBACK = "/airport-shuttle-single-person-with-luggage.webp";
 
 type BlogPageProps = {
   params: Promise<{ locale: "ar" | "en" }>;

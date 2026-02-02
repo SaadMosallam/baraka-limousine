@@ -49,7 +49,7 @@ type TestimonialItem = {
   role: string;
   quote: string;
   location: string;
-  /** Optional: path to avatar image (e.g. "/avatars/ahmed.jpg"). Omit or leave empty to use placeholder. */
+  /** Optional: path to avatar image (e.g. "/avatars/ahmed.webp"). Omit or leave empty to use placeholder. */
   avatar?: string;
 };
 
@@ -384,7 +384,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-zinc-50 p-8 md:flex-row md:items-center">
           <div className="flex w-fit items-center justify-center">
             <Image
-              src="/phone-call-location-pin.png"
+              src="/phone-call-location-pin.webp"
               alt={t("contactTitle")}
               width={120}
               height={120}

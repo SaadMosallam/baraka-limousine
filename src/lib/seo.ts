@@ -1,5 +1,5 @@
 export const baseUrl = "https://baraka-limousine.com";
-export const ogImageUrl = `${baseUrl}/og.png`;
+export const ogImageUrl = `${baseUrl}/og.webp`;
 
 export const buildAlternates = (locale: string, path: string) => ({
   canonical: `${baseUrl}/${locale}${path}`,
