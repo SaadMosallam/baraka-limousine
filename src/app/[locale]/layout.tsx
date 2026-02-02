@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,14 +11,16 @@ import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Suspense } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const cairo = localFont({
+  src: [
+    {
+      path: "../../fonts/Cairo[slnt,wght].ttf",
+      weight: "400 700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-cairo",
+  display: "swap",
 });
 
 export function generateStaticParams() {
@@ -70,7 +72,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${cairo.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
