@@ -123,7 +123,7 @@ export function HeroCarousel({
                                 {/* Content: bottom on mobile, centered on desktop */}
                                 <div className="absolute inset-0 flex items-end pb-16 md:items-center md:pb-0">
 
-                                    <div className="mx-auto w-full max-w-6xl">
+                                    <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-10 lg:px-12">
                                         <div
                                             className={`min-w-0 max-w-xl text-white break-words ${locale === "ar"
                                                 ? "text-center md:text-right md:ml-auto"
@@ -134,7 +134,7 @@ export function HeroCarousel({
                                                 {slide.title}
                                             </h1>
 
-                                            <p className="mt-3 text-xs text-white/90 sm:text-sm md:text-base break-words">
+                                            <p className="mt-3 max-w-xl text-xs text-white/90 sm:text-sm md:text-base break-words">
                                                 {slide.description}
                                             </p>
 
