@@ -27,7 +27,7 @@ type HeroCarouselProps = {
     callLabel: string;
 };
 
-const AUTOPLAY_MS = 30_000;
+const AUTOPLAY_MS = 10_000;
 const TICK_MS = 100;
 
 export function HeroCarousel({
@@ -121,19 +121,20 @@ export function HeroCarousel({
                                 <div className="absolute inset-0 bg-black/35" />
 
                                 {/* Content: bottom on mobile, centered on desktop */}
-                                <div className="absolute inset-0 flex items-end pb-10 md:items-center md:pb-0">
+                                <div className="absolute inset-0 flex items-end pb-16 md:items-center md:pb-0">
+
                                     <div className="mx-auto w-full max-w-6xl">
                                         <div
-                                            className={`max-w-xl text-white ${locale === "ar"
+                                            className={`min-w-0 max-w-xl text-white break-words ${locale === "ar"
                                                 ? "text-center md:text-right md:ml-auto"
                                                 : "text-center md:text-left md:mr-auto"
                                                 }`}
                                         >
-                                            <h1 className="text-xl font-bold leading-tight sm:text-2xl md:text-4xl">
+                                            <h1 className="text-xl font-bold leading-tight sm:text-2xl md:text-4xl break-words">
                                                 {slide.title}
                                             </h1>
 
-                                            <p className="mt-3 text-xs text-white/90 sm:text-sm md:text-base">
+                                            <p className="mt-3 text-xs text-white/90 sm:text-sm md:text-base break-words">
                                                 {slide.description}
                                             </p>
 
@@ -186,22 +187,28 @@ export function HeroCarousel({
                     </>
                 )}
 
-                {/* Progress bars + dots */}
+                {/* Progress bar (active) + dots (inactive) */}
                 <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-2">
-                    <div className="flex gap-1">
-                        {slides.map((_, i) => (
-                            <div
-                                key={i}
-                                className="h-1 w-8 rounded-full bg-white/30 overflow-hidden"
-                            >
-                                {i === selectedIndex && (
+                    <div className="flex items-center gap-1.5">
+                        {slides.map((_, i) =>
+                            i === selectedIndex ? (
+                                <div
+                                    key={i}
+                                    className="h-1 w-8 rounded-full bg-white/30 overflow-hidden"
+                                >
                                     <div
                                         className="h-full bg-white transition-all"
                                         style={{ width: `${progress}%` }}
                                     />
-                                )}
-                            </div>
-                        ))}
+                                </div>
+                            ) : (
+                                <div
+                                    key={i}
+                                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-white/30"
+                                    aria-hidden
+                                />
+                            )
+                        )}
                     </div>
                 </div>
             </Carousel>
