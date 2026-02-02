@@ -6,6 +6,7 @@ type LocalizedText = {
 };
 
 type LocationService = {
+  slug: string;
   title: LocalizedText;
   description: LocalizedText;
 };
@@ -45,12 +46,12 @@ export const locations: LocationPage[] = [
       en: "Cairo Airport Transfers & Private Chauffeur",
     },
     heroSubtitle: {
-      ar: "خدمة احترافية في القاهرة تشمل الاستقبال من المطار، الرحلات الخاصة، الزفاف، والسيارات الكبيرة للعائلات.",
+      ar: "خدمة احترافية في القاهرة تشمل استقبال المطار، الرحلات الخاصة، الزفاف، والسيارات الكبيرة للعائلات.",
       en: "Professional service in Cairo for airport pickup, private trips, weddings, and large vehicles for families.",
     },
     intro: [
       {
-        ar: "نوفر خدمة توصيل المطار في القاهرة مع استقبال في المطار ومتابعة مواعيد الرحلات.",
+        ar: "نوفر خدمة توصيل مطار القاهرة مع استقبال ومتابعة مواعيد الرحلات.",
         en: "We provide Cairo airport transfers with flight tracking and meet-and-greet service.",
       },
       {
@@ -60,6 +61,7 @@ export const locations: LocationPage[] = [
     ],
     services: [
       {
+        slug: "airport-shuttle",
         title: { ar: "توصيل مطار القاهرة", en: "Cairo Airport Transfers" },
         description: {
           ar: "استقبال وتوصيل من وإلى المطار بسيارات حديثة وسائقين محترفين.",
@@ -67,6 +69,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق للرحلات", en: "Private Car with Driver" },
         description: {
           ar: "رحلات خاصة داخل القاهرة أو لمدن أخرى بسيارة مريحة وسائق خاص.",
@@ -74,6 +77,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "wedding-car",
         title: { ar: "سيارة زفاف", en: "Wedding Car Service" },
         description: {
           ar: "ليموزين زفاف أنيق مع سائق لليوم الكبير.",
@@ -81,6 +85,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "family-van",
         title: { ar: "سيارات كبيرة للعائلات", en: "Large Vehicles for Families" },
         description: {
           ar: "فانات وسيارات واسعة للأمتعة وعدد أكبر من الركاب.",
@@ -88,6 +93,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "حجز أتوبيس للرحلات الجماعية داخل القاهرة وخارجها.",
@@ -151,12 +157,13 @@ export const locations: LocationPage[] = [
         en: "We offer Borg El Arab airport transfers and Alexandria pickups with comfortable vehicles.",
       },
       {
-        ar: "خدمة سيارة بسائق للرحلات الساحلية أو للانتقال بين الإسكندرية والقاهرة.",
+        ar: "سيارة بسائق للرحلات الساحلية أو للانتقال بين الإسكندرية والقاهرة.",
         en: "Private car with driver for coastal trips or Alexandria–Cairo transfers.",
       },
     ],
     services: [
       {
+        slug: "airport-shuttle",
         title: { ar: "توصيل مطار برج العرب", en: "Borg El Arab Airport Transfers" },
         description: {
           ar: "استقبال وتوصيل من المطار مع متابعة مواعيد الرحلات.",
@@ -164,13 +171,15 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق للرحلات", en: "Private Car with Driver" },
         description: {
-          ar: "رحلات داخل الإسكندرية أو إلى الساحل الشمالي بسيارة مريحة.",
+        ar: "رحلات داخل الإسكندرية أو إلى الساحل الشمالي بسيارة مريحة وسائق خاص.",
           en: "Trips within Alexandria or to the North Coast with a private driver.",
         },
       },
       {
+        slug: "wedding-car",
         title: { ar: "سيارة زفاف", en: "Wedding Car Service" },
         description: {
           ar: "سيارة زفاف أنيقة مع سائق محترف.",
@@ -178,6 +187,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "family-van",
         title: { ar: "فان للعائلات", en: "Family Vans" },
         description: {
           ar: "سيارات كبيرة للأمتعة وعدد أكبر من الركاب.",
@@ -185,6 +195,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "حجز أتوبيس لرحلات الشركات أو العائلات.",
@@ -239,7 +250,7 @@ export const locations: LocationPage[] = [
       en: "Hurghada Airport Transfers & Red Sea Trips",
     },
     heroSubtitle: {
-      ar: "خدمة استقبال المطار ورحلات خاصة داخل الغردقة أو للمدن السياحية.",
+      ar: "استقبال المطار ورحلات خاصة داخل الغردقة أو للمدن السياحية.",
       en: "Airport pickup and private trips within Hurghada or to nearby destinations.",
     },
     intro: [
@@ -248,12 +259,13 @@ export const locations: LocationPage[] = [
         en: "We provide Hurghada airport transfers with professional drivers and comfortable vehicles.",
       },
       {
-        ar: "رحلات خاصة إلى سهل حشيش، الجونة، أو سفاجا.",
+        ar: "رحلات خاصة إلى سهل حشيش، الجونة، أو سفاجا بسيارة بسائق.",
         en: "Private trips to Sahl Hasheesh, El Gouna, or Safaga.",
       },
     ],
     services: [
       {
+        slug: "airport-shuttle",
         title: { ar: "توصيل مطار الغردقة", en: "Hurghada Airport Transfers" },
         description: {
           ar: "استقبال وتوصيل من وإلى مطار الغردقة.",
@@ -261,6 +273,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق للرحلات", en: "Private Car with Driver" },
         description: {
           ar: "رحلات سياحية خاصة داخل الغردقة وخارجها.",
@@ -268,6 +281,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "family-van",
         title: { ar: "سيارات كبيرة للعائلات", en: "Family Vans" },
         description: {
           ar: "فانات واسعة للأمتعة والحقائب.",
@@ -275,6 +289,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "حجز أتوبيس للرحلات السياحية والشركات.",
@@ -334,7 +349,7 @@ export const locations: LocationPage[] = [
     },
     intro: [
       {
-        ar: "نوفر سيارات بسائق للرحلات إلى مطروح والساحل الشمالي.",
+        ar: "نوفر سيارات بسائق للرحلات إلى مطروح والساحل الشمالي براحة وأمان.",
         en: "We provide private driver services for Matrouh and the North Coast.",
       },
       {
@@ -344,6 +359,7 @@ export const locations: LocationPage[] = [
     ],
     services: [
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق لمطروح", en: "Private Driver to Matrouh" },
         description: {
           ar: "رحلات طويلة مريحة بسيارات حديثة.",
@@ -351,6 +367,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "family-van",
         title: { ar: "سيارات كبيرة للعائلات", en: "Family Vans" },
         description: {
           ar: "سيارات واسعة للأمتعة وعدد أكبر من الركاب.",
@@ -358,6 +375,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "حجز أتوبيس للرحلات الصيفية والرحلات الجماعية.",
@@ -427,13 +445,15 @@ export const locations: LocationPage[] = [
     ],
     services: [
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق", en: "Private Car with Driver" },
         description: {
-          ar: "تنقل داخل السويس أو إلى القاهرة والإسماعيلية.",
+        ar: "تنقل داخل السويس أو إلى القاهرة والإسماعيلية بسيارة بسائق.",
           en: "Transport within Suez or to Cairo and Ismailia.",
         },
       },
       {
+        slug: "family-van",
         title: { ar: "سيارات كبيرة للعائلات", en: "Family Vans" },
         description: {
           ar: "فانات واسعة للأمتعة والعائلات.",
@@ -441,6 +461,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "أتوبيس للرحلات الجماعية والشركات.",
@@ -504,12 +525,13 @@ export const locations: LocationPage[] = [
         en: "We provide Sharm El Sheikh airport transfers with flight tracking.",
       },
       {
-        ar: "رحلات خاصة بين المنتجعات أو إلى دهب ونويبع.",
+        ar: "رحلات خاصة بين المنتجعات أو إلى دهب ونويبع بسيارة بسائق.",
         en: "Private trips between resorts or to Dahab and Nuweiba.",
       },
     ],
     services: [
       {
+        slug: "airport-shuttle",
         title: { ar: "توصيل مطار شرم الشيخ", en: "Sharm El Sheikh Airport Transfers" },
         description: {
           ar: "استقبال وتوصيل من وإلى المطار بسيارات مريحة.",
@@ -517,13 +539,15 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "private-driver",
         title: { ar: "سيارة بسائق للرحلات", en: "Private Car with Driver" },
         description: {
-          ar: "رحلات خاصة للمنتجعات أو لمدن البحر الأحمر.",
+        ar: "رحلات خاصة للمنتجعات أو لمدن البحر الأحمر بسيارة بسائق.",
           en: "Private trips to resorts or Red Sea destinations.",
         },
       },
       {
+        slug: "family-van",
         title: { ar: "سيارات كبيرة للعائلات", en: "Family Vans" },
         description: {
           ar: "فانات للأمتعة وعدد أكبر من الركاب.",
@@ -531,6 +555,7 @@ export const locations: LocationPage[] = [
         },
       },
       {
+        slug: "bus-trips",
         title: { ar: "أتوبيس رحلات", en: "Bus Trips (Up to 50)" },
         description: {
           ar: "حجز أتوبيس للرحلات السياحية والشركات.",

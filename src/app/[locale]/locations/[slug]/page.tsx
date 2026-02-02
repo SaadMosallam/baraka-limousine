@@ -9,6 +9,7 @@ import {
   locations,
   type SupportedLocale,
 } from "@/data/locations";
+import { locationServices } from "@/data/locationServices";
 
 type LocationPageProps = {
   params: Promise<{ locale: SupportedLocale; slug: string }>;
@@ -85,7 +86,30 @@ export default async function LocationPage({
                 <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                   {service.description[locale]}
                 </p>
+                <a
+                  href={`/${locale}/locations/${location.slug}/${service.slug}`}
+                  className="mt-3 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-800 dark:text-emerald-400"
+                >
+                  {locale === "ar" ? "تفاصيل الخدمة" : "Service details"}
+                </a>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold">
+            {locale === "ar" ? "خدمات بحسب المدينة" : "Services by City"}
+          </h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {locationServices.map((service) => (
+              <a
+                key={service.slug}
+                href={`/${locale}/locations/${location.slug}/${service.slug}`}
+                className="rounded-2xl border border-zinc-100 bg-white p-4 text-sm text-zinc-700 shadow-sm hover:border-emerald-300 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
+              >
+                {service.title[locale]}
+              </a>
             ))}
           </div>
         </section>
