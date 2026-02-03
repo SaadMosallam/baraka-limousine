@@ -10,7 +10,7 @@ import "../../app/globals.css";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Suspense } from "react";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const cairo = localFont({
   src: [
