@@ -287,6 +287,86 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 </div>
               </div>
             ))}
+            <div className="rounded-2xl border border-zinc-100 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:col-span-3 mt-6">
+              <h3 className="text-lg font-semibold text-zinc-700 dark:text-zinc-300">
+                {t("homeFacebookTestimonialsTitle")}
+              </h3>
+              <div className="mt-4 grid gap-4 md:grid-cols-3">
+                {/** Facebook testimonial embeds */}
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fesraa.hassan.521604%2Fposts%2Fpfbid0256azr4KxJLdXXEjyvuv9WWGrHgDe41bzSoSLDdtfXA67AwGf2XiyvUvmyPSjzKhMl&show_text=true&width=500"
+                  width="500"
+                  height="250"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 1"
+                />
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMagdyTheDiver%2Fposts%2Fpfbid02TwxgZdnpzSTBpDST7HBcNrGYzatEiai5veD1pjPmGYExWvLEbgdQdzssGk5VGepzl&show_text=true&width=500"
+                  width="500"
+                  height="155"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 2"
+                />
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Faminno2%2Fposts%2Fpfbid0Y2HvRRwHR7R9mkqvR5fP7Yf1B5MW21dZaCWtN7SEoJfNHecCn2c8MF8EXeH31j4Kl&show_text=true&width=500"
+                  width="500"
+                  height="155"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 3"
+                />
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02SxJESdHpp4r1CtRrDUZm7PMCUqk1gKhSviRf3vEmksyXZFQeQg2zXL87ozKM153jl%26id%3D100076364573436&show_text=true&width=500"
+                  width="500"
+                  height="250"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 4"
+                />
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsherifa.reda%2Fposts%2Fpfbid02QUo8sZD4mz98QPfqyNHs6RPa7zar5U6WFaLxDHLLXKCfKsWu5WGBpvgDYu8WvLipl&show_text=true&width=500"
+                  width="500"
+                  height="250"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 5"
+                />
+                <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fesraa.abo.shady.484176%2Fposts%2Fpfbid0ibHi71GGMW9cFTHKko9tAgkFDmMTL9JsuGw79NT6KVFixrDHNWBVV174CqEEFRLMl&show_text=true&width=500"
+                  width="500"
+                  height="155"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-[260px] w-full"
+                  title="Facebook Testimonial 6"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
