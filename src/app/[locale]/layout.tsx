@@ -10,6 +10,7 @@ import "../../app/globals.css";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const cairo = localFont({
   src: [
@@ -99,6 +100,7 @@ export default async function LocaleLayout({
             </Suspense>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html >
   );
