@@ -48,8 +48,14 @@ export async function generateMetadata({
     description,
     keywords: t.raw("metaKeywords") as string[],
     icons: {
-      icon: "/logo.svg",
-      apple: "/logo.svg",
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+        { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
     },
     alternates: buildAlternates(locale, ""),
     openGraph: buildOpenGraph(locale, "", title, description),
