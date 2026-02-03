@@ -3,7 +3,9 @@ import enMessages from "../../messages/en.json";
 import { locations } from "@/data/locations";
 import { locationServices } from "@/data/locationServices";
 
-const baseUrl = "https://baraka-limousine.com";
+import { getBaseUrl } from "@/lib/seo";
+
+const baseUrl = getBaseUrl();
 const locales = ["ar", "en"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

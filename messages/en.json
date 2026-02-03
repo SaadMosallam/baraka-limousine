@@ -15,10 +15,22 @@
   "homeHeroTitle": "Cairo Airport limousine service with premium 24/7 support",
   "homeHeroSubtitle": "Comfort and professionalism on every ride in and out of Cairo.",
   "homeHighlights": [
-    { "title": "Modern fleet", "subtitle": "Updated vehicles" },
-    { "title": "Professional drivers", "subtitle": "Reliable service" },
-    { "title": "Fair pricing", "subtitle": "Real value" },
-    { "title": "Fast booking", "subtitle": "Instant confirmation" }
+    {
+      "title": "Modern fleet",
+      "subtitle": "Updated vehicles"
+    },
+    {
+      "title": "Professional drivers",
+      "subtitle": "Reliable service"
+    },
+    {
+      "title": "Fair pricing",
+      "subtitle": "Real value"
+    },
+    {
+      "title": "Fast booking",
+      "subtitle": "Instant confirmation"
+    }
   ],
   "homeServicesTitle": "Our Services",
   "homeServicesCta": "View all services",
@@ -36,11 +48,26 @@
   "homeFleetTitle": "Fleet & Capacity",
   "homeFleetSubtitle": "From 4-seat sedans to 50-seat buses, with every size in between.",
   "homeFleetItems": [
-    { "title": "Private Sedan (4 seats)", "subtitle": "Ideal for solo or business travel." },
-    { "title": "SUV (6-7 seats)", "subtitle": "Extra space for families and luggage." },
-    { "title": "Van (8-14 seats)", "subtitle": "Group airport transfers and tours." },
-    { "title": "Coaster (22-30 seats)", "subtitle": "Comfortable for larger groups." },
-    { "title": "Bus (40-50 seats)", "subtitle": "Full-size coaches for events and delegations." }
+    {
+      "title": "Private Sedan (4 seats)",
+      "subtitle": "Ideal for solo or business travel."
+    },
+    {
+      "title": "SUV (6-7 seats)",
+      "subtitle": "Extra space for families and luggage."
+    },
+    {
+      "title": "Van (8-14 seats)",
+      "subtitle": "Group airport transfers and tours."
+    },
+    {
+      "title": "Coaster (22-30 seats)",
+      "subtitle": "Comfortable for larger groups."
+    },
+    {
+      "title": "Bus (40-50 seats)",
+      "subtitle": "Full-size coaches for events and delegations."
+    }
   ],
   "homeCoverageTitle": "Coverage across Egypt",
   "homeCoverageItems": [
@@ -700,5 +727,6 @@
   "metaBlogTitle": "Blog",
   "metaBlogDescription": "Baraka Limousine posts and travel tips.",
   "metaContactTitle": "Contact Us",
-  "metaContactDescription": "Book your ride now and reach Baraka Limousine."
+  "metaContactDescription": "Book your ride now and reach Baraka Limousine.",
+  "metaHomeTitle": "Cairo Airport Transfers & Limousine Service | Baraka Limousine"
 }
