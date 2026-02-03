@@ -34,6 +34,7 @@ import {
   Van,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
+import { FacebookLogo } from "@phosphor-icons/react/dist/ssr";
 
 type Highlight = {
   title: string;
@@ -369,47 +370,57 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </section>
 
         {/* CONTACT */}
-        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-zinc-50 p-8 dark:bg-zinc-900 dark:border dark:border-zinc-800 md:flex-row md:items-center">
-          <div className="flex w-fit items-center justify-center">
-            <Image
-              src="/phone-call-location-pin.webp"
-              alt={t("contactTitle")}
-              width={120}
-              height={120}
-              className="h-20 w-auto"
-            />
-          </div>
+        <section className="mt-16 flex flex-col gap-8 rounded-3xl bg-zinc-50 p-8 dark:bg-zinc-900 dark:border dark:border-zinc-800 md:flex-row md:items-center md:justify-between">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold dark:text-zinc-100">
               {t("contactTitle")}
             </h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <PhoneCall size={16} weight="duotone" className="text-emerald-600 dark:text-emerald-400" />
               {t("contactHours")}
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-medium text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay}</span>
-                <a className="inline-flex items-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE164}`} target="_blank" rel="noopener noreferrer">
+                <a className="inline-flex min-w-28 items-center justify-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a] sm:min-w-32" href={`https://wa.me/${siteInfo.whatsappE164}`} target="_blank" rel="noopener noreferrer">
                   <WhatsappLogo size={14} weight="duotone" />
                   {t("ctaWhatsapp")}
                 </a>
-                <a className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE164}`}>
+                <a className="inline-flex min-w-28 items-center justify-center gap-1 rounded-full border border-zinc-200 px-4 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800 sm:min-w-32" href={`tel:${siteInfo.phoneE164}`}>
                   <PhoneCall size={14} weight="duotone" />
                   {t("ctaCallNow")}
                 </a>
               </div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-medium text-zinc-900 dark:text-zinc-100">{siteInfo.phoneDisplay2}</span>
-                <a className="inline-flex items-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a]" href={`https://wa.me/${siteInfo.whatsappE1642}`} target="_blank" rel="noopener noreferrer">
+                <a className="inline-flex min-w-28 items-center justify-center gap-1 rounded-full border border-[#25D366] bg-[#25D366] px-4 py-1.5 text-xs font-semibold text-white hover:bg-[#1f8f4a] hover:border-[#1f8f4a] dark:bg-[#25D366] dark:text-white dark:hover:bg-[#1f8f4a] sm:min-w-32" href={`https://wa.me/${siteInfo.whatsappE1642}`} target="_blank" rel="noopener noreferrer">
                   <WhatsappLogo size={14} weight="duotone" />
                   {t("ctaWhatsapp")}
                 </a>
-                <a className="inline-flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800" href={`tel:${siteInfo.phoneE1642}`}>
+                <a className="inline-flex min-w-28 items-center justify-center gap-1 rounded-full border border-zinc-200 px-4 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800 sm:min-w-32" href={`tel:${siteInfo.phoneE1642}`}>
                   <PhoneCall size={14} weight="duotone" />
                   {t("ctaCallNow")}
                 </a>
               </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  className="inline-flex min-w-28 items-center justify-center gap-2 rounded-full border border-[#1877F2] bg-[#1877F2] px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-[#166fe5] hover:border-[#166fe5] sm:min-w-32"
+                  href={siteInfo.facebookPageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FacebookLogo size={14} weight="duotone" className="text-white" />
+                  {t("ctaFacebook")}
+                </a>
+              </div>
             </div>
+          </div>
+          <div className="flex w-full items-end justify-center md:ms-auto md:w-auto md:justify-end">
+            <Image
+              src="/contact-us-illustration.svg"
+              alt={t("contactTitle")}
+              width={240}
+              height={240}
+              className="h-48 w-auto sm:h-56 md:h-64"
+            />
           </div>
         </section>
       </main>

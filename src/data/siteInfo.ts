@@ -7,4 +7,5 @@ export const siteInfo = {
   phoneDisplay2: "01060117624",
   phoneE1642: "201060117624",
   whatsappE1642: "201060117624",
+  facebookPageUrl: "https://www.facebook.com/ElBarakat.limo",
 } as const;

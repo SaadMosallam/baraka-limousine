@@ -12,6 +12,7 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import { siteInfo } from "@/data/siteInfo";
+import { FacebookLogo } from "@phosphor-icons/react/dist/ssr";
 
 export async function Footer(props: { locale: string }) {
   const { locale } = props;
@@ -42,31 +43,42 @@ export async function Footer(props: { locale: string }) {
             <span>{t("contactHours")}</span>
           </p>
           <a
-            className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400"
+            className="flex items-center gap-2 text-zinc-600 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400"
             href={`https://wa.me/${siteInfo.whatsappE164}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
-            {siteInfo.phoneDisplay} – {t("ctaWhatsapp")}
+            <WhatsappLogo size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
+            {siteInfo.phoneDisplay}
           </a>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE164}`}>
-            <PhoneCall size={18} weight="duotone" className="shrink-0" />
+          <a className="flex items-center gap-2 text-zinc-600 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400" href={`tel:${siteInfo.phoneE164}`}>
+            <PhoneCall size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {siteInfo.phoneDisplay}
           </a>
           <a
-            className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400"
+            className="flex items-center gap-2 text-zinc-600 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400"
             href={`https://wa.me/${siteInfo.whatsappE1642}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <WhatsappLogo size={18} weight="duotone" className="shrink-0" />
-            {siteInfo.phoneDisplay2} – {t("ctaWhatsapp")}
-          </a>
-          <a className="flex items-center gap-2 text-emerald-700 hover:underline dark:text-emerald-400" href={`tel:${siteInfo.phoneE1642}`}>
-            <PhoneCall size={18} weight="duotone" className="shrink-0" />
+            <WhatsappLogo size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {siteInfo.phoneDisplay2}
           </a>
+          <a className="flex items-center gap-2 text-zinc-600 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400" href={`tel:${siteInfo.phoneE1642}`}>
+            <PhoneCall size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
+            {siteInfo.phoneDisplay2}
+          </a>
+          <div>
+            <a
+              className="flex items-center gap-2 text-sm text-zinc-600 hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400"
+              href={siteInfo.facebookPageUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookLogo size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
+              {t("ctaFacebook")}
+            </a>
+          </div>
         </div>
         <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
           <p className="font-semibold text-zinc-900 dark:text-zinc-100">{t("footerQuickLinks")}</p>
