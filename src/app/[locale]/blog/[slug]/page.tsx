@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { BLOG_IMAGE_FALLBACK } from "@/data/blog";
 import {
   AirplaneTakeoff,
@@ -90,6 +90,18 @@ export default async function BlogPostPage(props: { params: Promise<{ locale: st
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-3xl px-6 py-12">
         <article>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                buildBreadcrumb(locale, [
+                  { name: t("siteName"), path: "" },
+                  { name: t("blogTitle"), path: "/blog" },
+                  { name: post.title, path: `/blog/${post.slug}` },
+                ])
+              ),
+            }}
+          />
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-zinc-100">
             <Image
               src={imageSrc}

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteInfo } from "@/data/siteInfo";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { FacebookLogo, PhoneCall, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 export async function generateMetadata({
@@ -34,6 +34,17 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildBreadcrumb(locale, [
+                { name: t("siteName"), path: "" },
+                { name: t("contactTitle"), path: "/contact" },
+              ])
+            ),
+          }}
+        />
         <h1 className="text-3xl font-bold dark:text-zinc-100">{t("contactTitle")}</h1>
         <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">{t("contactSubtitle")}</p>
         <div className="mt-8 flex flex-col gap-8 rounded-3xl border border-zinc-100 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900 md:flex-row md:items-center md:justify-between">

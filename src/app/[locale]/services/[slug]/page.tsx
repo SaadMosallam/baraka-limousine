@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactActions } from "@/components/ContactActions";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 
 type ServiceItem = {
   id: string;
@@ -97,6 +97,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   name: t("metaSiteTitle"),
                 },
               }),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                buildBreadcrumb(locale, [
+                  { name: t("siteName"), path: "" },
+                  { name: t("servicesTitle"), path: "/services" },
+                  { name: service.title, path: `/services/${slug}` },
+                ])
+              ),
             }}
           />
           {faq && (

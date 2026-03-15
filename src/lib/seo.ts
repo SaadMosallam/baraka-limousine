@@ -1,4 +1,5 @@
 const normalizeBaseUrl = (value: string) => value.replace(/\/$/, "");
+const DEFAULT_SITE_URL = "https://barakalimo.com";
 
 export const getBaseUrl = () => {
   const explicit =
@@ -13,11 +14,7 @@ export const getBaseUrl = () => {
     );
   }
 
-  if (process.env.VERCEL_URL) {
-    return normalizeBaseUrl(`https://${process.env.VERCEL_URL}`);
-  }
-
-  return "http://localhost:3000";
+  return DEFAULT_SITE_URL;
 };
 
 export const buildAlternates = (locale: string, path: string) => {
@@ -63,5 +60,26 @@ export const buildTwitter = (title: string, description: string) => {
     title,
     description,
     images: [`${baseUrl}/og.webp`],
+  };
+};
+
+type BreadcrumbItem = {
+  name: string;
+  path: string;
+};
+
+export const buildBreadcrumb = (locale: string, items: BreadcrumbItem[]) => {
+  const baseUrl = getBaseUrl();
+  const normalizePath = (path: string) => (path === "/" ? "" : path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${baseUrl}/${locale}${normalizePath(item.path)}`,
+    })),
   };
 };

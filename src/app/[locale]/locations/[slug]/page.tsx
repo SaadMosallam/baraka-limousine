@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactActions } from "@/components/ContactActions";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import {
   getLocationBySlug,
   locations,
@@ -51,6 +51,35 @@ export default async function LocationPage({
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-5xl px-6 py-12">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildBreadcrumb(locale, [
+                { name: locale === "ar" ? "الرئيسية" : "Home", path: "" },
+                { name: locale === "ar" ? "مناطق الخدمة" : "Service Areas", path: "/locations" },
+                { name: location.name[locale], path: `/locations/${location.slug}` },
+              ])
+            ),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: location.faqs.map((item) => ({
+                "@type": "Question",
+                name: item.q[locale],
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a[locale],
+                },
+              })),
+            }),
+          }}
+        />
         <header className="space-y-3 rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
             {locale === "ar" ? "منطقة الخدمة" : "Service Area"}

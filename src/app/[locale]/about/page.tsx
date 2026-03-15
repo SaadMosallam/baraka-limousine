@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Globe, Star } from "@phosphor-icons/react/dist/ssr";
 
 type AboutPageProps = {
@@ -35,6 +35,17 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-4xl px-6 py-12">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildBreadcrumb(locale, [
+                { name: t("siteName"), path: "" },
+                { name: t("aboutTitle"), path: "/about" },
+              ])
+            ),
+          }}
+        />
         <h1 className="text-3xl font-bold">{t("aboutTitle")}</h1>
         <div className="mt-8 space-y-6 text-sm text-zinc-600">
           {(t.raw("aboutParagraphs") as string[]).map((paragraph) => (

@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactActions } from "@/components/ContactActions";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildBreadcrumb, buildOpenGraph, buildTwitter } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { serviceIcons } from "@/data/serviceIcons";
 import {
@@ -69,6 +69,17 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Header locale={locale} />
       <main className="mx-auto w-full max-w-6xl px-6 py-12">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildBreadcrumb(locale, [
+                { name: t("siteName"), path: "" },
+                { name: t("servicesTitle"), path: "/services" },
+              ])
+            ),
+          }}
+        />
         <h1 className="text-3xl font-bold">{t("servicesTitle")}</h1>
         <div className="mt-6 space-y-3 text-sm text-zinc-600">
           {introParagraphs.map((paragraph) => (
