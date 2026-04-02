@@ -8,6 +8,8 @@ const intlMiddleware = createMiddleware({
   locales: locales,
   defaultLocale: "ar",
   localePrefix: "always", // 🔴 VERY IMPORTANT
+  /** SEO landings use different slugs per locale; next-intl's Link header would emit wrong hreflang (e.g. `/en/…` + Arabic slug). Alternates come from `generateMetadata` instead. */
+  alternateLinks: false,
 });
 
 export default function middleware(request: NextRequest) {

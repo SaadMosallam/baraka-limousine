@@ -31,6 +31,10 @@ export const SEO_LANDING_PAIRS: SeoLandingPair[] = [
   { en: SEO_PATH_AIRPORT_TRANSFER_EN, ar: SEO_PATH_AIRPORT_CAIRO_AR },
 ];
 
+/** App Router segments for Arabic pages only — must match `next.config.ts` rewrite destinations (not public URLs). */
+const SEO_INTERNAL_SEGMENT_LIMOUSINE_AR = "limousine-cairo-ar";
+const SEO_INTERNAL_SEGMENT_AIRPORT_AR = "cairo-airport-ar";
+
 /** Use in `<Link href>` — matches `localePrefix: "always"` (`/en/…`, `/ar/…`). */
 export function getSeoLandingHref(segment: string): string {
   if (
@@ -80,6 +84,14 @@ export function getSeoLandingAlternatePath(
       if (targetLocale === "en") return `/en${pair.en}`;
       return `/ar${pair.ar}`;
     }
+  }
+  if (pathPart === `/${SEO_INTERNAL_SEGMENT_LIMOUSINE_AR}`) {
+    if (targetLocale === "en") return `/en${SEO_PATH_LIMOUSINE_CAIRO_EN}`;
+    return `/ar${SEO_PATH_LIMOUSINE_CAIRO_AR}`;
+  }
+  if (pathPart === `/${SEO_INTERNAL_SEGMENT_AIRPORT_AR}`) {
+    if (targetLocale === "en") return `/en${SEO_PATH_AIRPORT_TRANSFER_EN}`;
+    return `/ar${SEO_PATH_AIRPORT_CAIRO_AR}`;
   }
   return null;
 }
