@@ -12,6 +12,13 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import { siteInfo } from "@/data/siteInfo";
+import {
+  SEO_PATH_AIRPORT_CAIRO_AR,
+  SEO_PATH_AIRPORT_TRANSFER_EN,
+  SEO_PATH_LIMOUSINE_CAIRO_AR,
+  SEO_PATH_LIMOUSINE_CAIRO_EN,
+  getSeoLandingHref,
+} from "@/lib/seo-landing";
 import { FacebookLogo } from "@phosphor-icons/react/dist/ssr";
 
 export async function Footer(props: { locale: string }) {
@@ -22,7 +29,7 @@ export async function Footer(props: { locale: string }) {
 
   return (
     <footer className="border-t border-zinc-100 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
           <Link href={localePath("/")} className="inline-block">
             <Image
@@ -102,6 +109,58 @@ export async function Footer(props: { locale: string }) {
             <ChatCircle size={18} weight="duotone" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
             {t("navContact")}
           </Link>
+        </div>
+        <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="font-semibold text-zinc-900 dark:text-zinc-100">
+            {t("footerPopularServicesTitle")}
+          </p>
+          {locale === "en" ? (
+            <>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={getSeoLandingHref(SEO_PATH_LIMOUSINE_CAIRO_EN)}
+                prefetch={false}
+              >
+                {t("footerPopularCairoLimousine")}
+              </Link>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={getSeoLandingHref(SEO_PATH_AIRPORT_TRANSFER_EN)}
+                prefetch={false}
+              >
+                {t("footerPopularAirportTransfer")}
+              </Link>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={localePath("/services/airport")}
+              >
+                {t("footerPopularLimousineAirport")}
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={getSeoLandingHref(SEO_PATH_LIMOUSINE_CAIRO_AR)}
+                prefetch={false}
+              >
+                {t("footerPopularCairoLimousine")}
+              </Link>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={getSeoLandingHref(SEO_PATH_AIRPORT_CAIRO_AR)}
+                prefetch={false}
+              >
+                {t("footerPopularAirportTransfer")}
+              </Link>
+              <Link
+                className="block hover:text-emerald-700 dark:hover:text-emerald-400"
+                href={localePath("/services/airport")}
+              >
+                {t("footerPopularLimousineAirport")}
+              </Link>
+            </>
+          )}
         </div>
       </div>
       <div className="border-t border-zinc-200 py-4 text-center text-xs text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">

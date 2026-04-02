@@ -9,7 +9,7 @@ import { siteInfo } from "@/data/siteInfo";
 import { isServiceExcludedFromNav } from "@/data/serviceFilters";
 import { serviceIcons } from "@/data/serviceIcons";
 import { getTranslations } from "next-intl/server";
-import { buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/seo";
+import { buildAlternates, buildOpenGraph, buildTwitter, getBaseUrl } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -22,6 +22,7 @@ import {
   Bus,
   Briefcase,
   Car,
+  CheckCircle,
   Crown,
   CurrencyCircleDollar,
   Heart,
@@ -35,6 +36,13 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import { FacebookLogo } from "@phosphor-icons/react/dist/ssr";
+import {
+  SEO_PATH_AIRPORT_CAIRO_AR,
+  SEO_PATH_AIRPORT_TRANSFER_EN,
+  SEO_PATH_LIMOUSINE_CAIRO_AR,
+  SEO_PATH_LIMOUSINE_CAIRO_EN,
+  getSeoLandingHref,
+} from "@/lib/seo-landing";
 
 type Highlight = {
   title: string;
@@ -61,6 +69,9 @@ type ServiceItem = {
   description: string;
   image: string;
 };
+
+type HomeWhyItem = { title: string; text: string };
+type HomeFaqItem = { question: string; answer: string };
 
 export async function generateMetadata({
   params,
@@ -109,6 +120,25 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const trustItems = t.raw("homeTrustItems") as string[];
   const routesItems = t.raw("homeRoutesItems") as string[];
   const fleetSpecs = t.raw("homeFleetSpecsItems") as string[];
+  const seoEnParagraphs = t.raw("homeSeoBlockEnParagraphs") as string[];
+  const seoArParagraphs = t.raw("homeSeoBlockArParagraphs") as string[];
+  const whyBarakaItems = t.raw("homeWhyBarakaItems") as HomeWhyItem[];
+  const homeFaqItems = t.raw("homeFaqItems") as HomeFaqItem[];
+
+  const homeCanonical = `${getBaseUrl()}/${locale}`;
+  const homeFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${homeCanonical}#faq`,
+    mainEntity: homeFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   const highlightIcons = [
     ShieldCheck,
@@ -119,18 +149,196 @@ export default async function HomePage({ params }: { params: { locale: string } 
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+      />
       <Header locale={locale} />
 
-      {/* HERO */}
       <HeroCarousel
         slides={heroSlides}
         locale={localeTyped}
         whatsappLabel={t("ctaWhatsapp")}
         callLabel={t("ctaCallNow")}
+        bookNowLabel={t("ctaBookNow")}
+        bookNowHref={`/${locale}/contact`}
       />
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-16">
+        <h1 className="mx-auto mt-10 max-w-4xl text-center text-lg font-bold leading-snug tracking-tight text-zinc-800 dark:text-zinc-100 md:mt-12 md:text-xl lg:text-2xl">
+          {t("homeMainH1")}
+        </h1>
 
+        <section
+          className="mt-8 rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/50 md:p-8"
+          aria-labelledby="home-seo-heading"
+        >
+          <h2
+            id="home-seo-heading"
+            className="text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
+          >
+            {t("homeSeoSectionTitle")}
+          </h2>
+          <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            {t("homeSeoSectionSubtitle")}
+          </p>
+
+          {localeTyped === "en" ? (
+            <>
+              <div
+                className="mt-6 rounded-2xl border border-white bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+                dir="ltr"
+                lang="en"
+              >
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                  {t("homeSeoBlockEnTitle")}
+                </h3>
+                {seoEnParagraphs.map((para, i) => (
+                  <p
+                    key={`seo-en-${i}`}
+                    className="mt-3 text-start text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                  {t("homeSeoGuidesHeading")}
+                </p>
+                <ul className="mt-3 flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-2">
+                  <li>
+                    <Link
+                      href={getSeoLandingHref(SEO_PATH_LIMOUSINE_CAIRO_EN)}
+                      className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-400"
+                      prefetch={false}
+                    >
+                      {t("homeSeoAnchorLimousineCairo")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={getSeoLandingHref(SEO_PATH_AIRPORT_TRANSFER_EN)}
+                      className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-400"
+                      prefetch={false}
+                    >
+                      {t("homeSeoAnchorAirportTransfer")}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <>
+              <div
+                className="mt-6 rounded-2xl border border-white bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+                dir="rtl"
+                lang="ar"
+              >
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                  {t("homeSeoBlockArTitle")}
+                </h3>
+                {seoArParagraphs.map((para, i) => (
+                  <p
+                    key={`seo-ar-${i}`}
+                    className="mt-3 text-start text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                  {t("homeSeoGuidesHeading")}
+                </p>
+                <ul className="mt-3 flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-2">
+                  <li>
+                    <Link
+                      href={getSeoLandingHref(SEO_PATH_LIMOUSINE_CAIRO_AR)}
+                      className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-400"
+                      prefetch={false}
+                    >
+                      {t("homeSeoAnchorLimousineCairoAr")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={getSeoLandingHref(SEO_PATH_AIRPORT_CAIRO_AR)}
+                      className="font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-400"
+                      prefetch={false}
+                    >
+                      {t("homeSeoAnchorAirportAr")}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </>
+          )}
+        </section>
+
+        <section
+          className="mt-12 rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm dark:border-emerald-900/40 dark:bg-zinc-900/50 md:p-8"
+          aria-labelledby="home-why-baraka"
+        >
+          <div className="max-w-2xl">
+            <h2
+              id="home-why-baraka"
+              className="text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
+            >
+              {t("homeWhyBarakaTitle")}
+            </h2>
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              {t("homeWhyBarakaSubtitle")}
+            </p>
+          </div>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {whyBarakaItems.map((item) => (
+              <li
+                key={item.title}
+                className="flex gap-3 rounded-2xl border border-zinc-100 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-950"
+              >
+                <CheckCircle
+                  size={22}
+                  weight="duotone"
+                  className="mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"
+                  aria-hidden
+                />
+                <div>
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                    {item.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section
+          className="mt-12 rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/40 md:p-8"
+          aria-labelledby="home-faq"
+        >
+          <h2
+            id="home-faq"
+            className="text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
+          >
+            {t("homeFaqTitle")}
+          </h2>
+          <dl className="mt-6 space-y-6">
+            {homeFaqItems.map((item) => (
+              <div key={item.question}>
+                <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                  {item.question}
+                </dt>
+                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
         {/* HIGHLIGHTS */}
         <section className="mt-12 rounded-3xl bg-emerald-50 p-8 dark:bg-emerald-950/30 dark:border dark:border-emerald-900/30">

@@ -10,7 +10,8 @@ import {
     CarouselPrevious,
     type CarouselApi,
 } from "@/components/ui/carousel";
-import { PhoneCall, WhatsappLogo } from "@phosphor-icons/react";
+import Link from "next/link";
+import { CalendarCheck, PhoneCall, WhatsappLogo } from "@phosphor-icons/react";
 import { siteInfo } from "@/data/siteInfo";
 
 type HeroSlide = {
@@ -25,6 +26,8 @@ type HeroCarouselProps = {
     locale: "ar" | "en";
     whatsappLabel: string;
     callLabel: string;
+    bookNowLabel: string;
+    bookNowHref: string;
 };
 
 const AUTOPLAY_MS = 10_000;
@@ -35,6 +38,8 @@ export function HeroCarousel({
     locale,
     whatsappLabel,
     callLabel,
+    bookNowLabel,
+    bookNowHref,
 }: HeroCarouselProps) {
     const [api, setApi] = useState<CarouselApi | null>(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -131,9 +136,9 @@ export function HeroCarousel({
                                                 : "text-center md:mr-auto md:ml-0 md:text-left"
                                                 }`}
                                         >
-                                            <h1 className="text-lg font-bold leading-tight text-zinc-900 break-words dark:text-white sm:text-2xl md:text-4xl lg:text-5xl">
+                                            <h2 className="text-lg font-bold leading-tight text-zinc-900 break-words dark:text-white sm:text-2xl md:text-4xl lg:text-5xl">
                                                 {slide.title}
-                                            </h1>
+                                            </h2>
 
                                             <p className="mt-2 max-w-xl text-xs font-medium text-zinc-800 break-words dark:font-normal dark:text-zinc-300 sm:mt-3 sm:text-sm md:text-base md:text-lg">
                                                 {slide.description}
@@ -164,9 +169,23 @@ export function HeroCarousel({
                                                             <WhatsappLogo size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
                                                             {whatsappLabel}
                                                         </a>
+                                                        <Link
+                                                            href={bookNowHref}
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600 bg-white/90 px-3 py-2 text-xs font-semibold text-emerald-800 shadow-sm hover:bg-white dark:border-emerald-400 dark:bg-zinc-900/80 dark:text-emerald-200 dark:hover:bg-zinc-900 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
+                                                        >
+                                                            <CalendarCheck size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
+                                                            {bookNowLabel}
+                                                        </Link>
                                                     </>
                                                 ) : (
                                                     <>
+                                                        <Link
+                                                            href={bookNowHref}
+                                                            className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600 bg-white/90 px-3 py-2 text-xs font-semibold text-emerald-800 shadow-sm hover:bg-white dark:border-emerald-400 dark:bg-zinc-900/80 dark:text-emerald-200 dark:hover:bg-zinc-900 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:text-base"
+                                                        >
+                                                            <CalendarCheck size={18} weight="duotone" className="shrink-0 sm:w-5 sm:h-5" />
+                                                            {bookNowLabel}
+                                                        </Link>
                                                         <a
                                                             href={`https://wa.me/${siteInfo.whatsappE164}`}
                                                             target="_blank"

@@ -4,11 +4,28 @@ import { locations } from "@/data/locations";
 import { locationServices } from "@/data/locationServices";
 
 import { getBaseUrl } from "@/lib/seo";
+import {
+  SEO_PATH_AIRPORT_CAIRO_AR,
+  SEO_PATH_AIRPORT_TRANSFER_EN,
+  SEO_PATH_LIMOUSINE_CAIRO_AR,
+  SEO_PATH_LIMOUSINE_CAIRO_EN,
+  getSeoLandingPublicPath,
+} from "@/lib/seo-landing";
 
 const baseUrl = getBaseUrl();
 const locales = ["ar", "en"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const seoLandingUrls: MetadataRoute.Sitemap = [
+    getSeoLandingPublicPath("en", SEO_PATH_LIMOUSINE_CAIRO_EN),
+    getSeoLandingPublicPath("en", SEO_PATH_AIRPORT_TRANSFER_EN),
+    getSeoLandingPublicPath("ar", SEO_PATH_LIMOUSINE_CAIRO_AR),
+    getSeoLandingPublicPath("ar", SEO_PATH_AIRPORT_CAIRO_AR),
+  ].map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+  }));
+
   const staticPaths = ["/", "/about", "/services", "/blog", "/contact"];
   const blogPosts = enMessages.blogPosts;
   const serviceItems = enMessages.servicesItems;
@@ -52,5 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   ]);
 
-  return [...staticRoutes, ...blogRoutes, ...serviceRoutes, ...locationRoutes];
+  return [
+    ...seoLandingUrls,
+    ...staticRoutes,
+    ...blogRoutes,
+    ...serviceRoutes,
+    ...locationRoutes,
+  ];
 }

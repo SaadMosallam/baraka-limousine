@@ -12,6 +12,7 @@
   "navClose": "إغلاق",
   "ctaCallNow": "اتصل الآن",
   "ctaWhatsapp": "واتساب",
+  "ctaBookNow": "احجز الآن",
   "homeHeroTitle": "ليموزين مطار القاهرة بخدمة راقية على مدار 24/7",
   "homeHeroSubtitle": "راحة واحترافية في كل رحلة داخل وخارج القاهرة.",
   "homeHighlights": [
@@ -671,8 +672,61 @@
   "metaBlogDescription": "مقالات البركة ليموزين ونصائح السفر والتنقل.",
   "metaContactTitle": "تواصل معنا",
   "metaContactDescription": "احجز رحلتك الآن وتواصل مع البركة ليموزين.",
-  "metaHomeTitle": "خدمة ليموزين ونقل مطار القاهرة | بركة ليموزين",
+  "metaHomeTitle": "البركة ليموزين | ليموزين القاهرة ونقل المطار",
   "ctaFacebook": "فيسبوك",
   "ctaFacebookFollow": "تابعنا على فيسبوك",
-  "homeFacebookTestimonialsTitle": "عملاؤنا على فيسبوك"
+  "homeFacebookTestimonialsTitle": "عملاؤنا على فيسبوك",
+  "homeMainH1": "البركة ليموزين – خدمة ليموزين في القاهرة | نقل مطار القاهرة",
+  "homeSeoSectionTitle": "خطط مشوارك: ليموزين القاهرة ونقل المطار",
+  "homeSeoSectionSubtitle": "مسارات عملية، واختيار سيارة مناسب، وتنسيق هادئ عبر القاهرة الكبرى.",
+  "homeSeoBlockEnTitle": "Limousine Cairo & airport transfers",
+  "homeSeoBlockEnParagraphs": [
+    "If you are comparing limousine Cairo options for business visitors, conference shuttles, or family trips, consistency usually matters more than a glossy photo: clear pricing, a vehicle sized for passengers and luggage, and realistic Cairo airport transfer timing across Nasr City, Heliopolis, the Fifth Settlement, and western compounds. Baraka Limousine dispatches in Arabic and English so hotels, offices, and private homes receive short, accurate pickup notes you can forward on mobile. Whether you need a sedan for a solo executive, an SUV after a long-haul flight, or larger transport for a delegation, we match class to the route instead of defaulting to a single category.",
+    "Many programs blend city-hours with a dedicated Cairo airport transfer to or from CAI or Sphinx. Keeping both legs with one operator preserves contact numbers, waiting policies, and cabin standards. Travelers also look for ليموزين القاهرة or ليموزين مطار القاهرة to read grounded detail before booking—our Arabic pages outline typical meet points, buffers during rush hour, and how we plan for suitcase volume honestly. When you are ready, send dates, flight numbers if applicable, and every stop across Greater Cairo; we reply with a confirmation you can share with colleagues or family."
+  ],
+  "homeSeoBlockArTitle": "ليموزين القاهرة ونقل المطار",
+  "homeSeoBlockArParagraphs": [
+    "عند البحث عن ليموزين القاهرة للأعمال أو الضيافة أو العائلات، غالبًا ما يكون الفارق في الالتزام بالوقت ووضوح التسعير واختيار سيارة تناسب الحقائب فعليًا لا الصور فقط. نغطي مسارات القاهرة الكبرى من وسط البلد والزمالك إلى التجمع والقاهرة الجديدة والمعادي، مع تنسيق بالعربية والإنجليزية حتى تصل تعليمات الاستقبال لكل طرف في الرحلة دون لبس. سواء احتجت سيدانًا هادئة لاجتماعات متتالية أو دفعًا رباعيًا بعد رحلة طويلة أو فانًا لمجموعة، نوصي بفئة منطقية وفق المسار والأمتعة.",
+    "كثير من البرامج يجمع بين يوميات داخل المدينة وليموزين مطار القاهرة أو سفنكس في بداية أو نهاية الرحلة. تجميع التنظيم تحت جهة واحدة يحافظ على أرقام التواصل وسياسة الانتظار ونظافة المقصورة. للمزيد من التفاصيل قبل الحجز، راجع صفحات الدليل أدناه. أرسل التاريخ والتوقيت ورقم الرحلة عند توفره وكل المحطات؛ نعيد لك تأكيدًا واضحًا يمكن مشاركته مع المكتب أو العائلة."
+  ],
+  "homeSeoGuidesHeading": "أدلة: ليموزين القاهرة ونقل المطار",
+  "homeSeoAnchorLimousineCairo": "Best limousine service in Cairo",
+  "homeSeoAnchorAirportTransfer": "Cairo airport transfer",
+  "homeSeoAnchorLimousineCairoAr": "ليموزين القاهرة",
+  "homeSeoAnchorAirportAr": "ليموزين مطار القاهرة",
+  "homeWhyBarakaTitle": "لماذا تختار البركة ليموزين",
+  "homeWhyBarakaSubtitle": "معايير واضحة في كل مشوار.",
+  "homeWhyBarakaItems": [
+    { "title": "سائقون محترفون", "text": "سائقون أذكياء في المسارات ومهذبون داخل القاهرة الكبرى." },
+    { "title": "التزام بالمواعيد", "text": "هوامش للزحام وإجراءات المطار وتغيّر الرحلات عند مشاركة التفاصيل." },
+    { "title": "مركبات نظيفة", "text": "أسطول مُدار من السيدان حتى الفان والأتوبيس لمجموعات أكبر." },
+    { "title": "خدمة على مدار الساعة", "text": "حجز ودعم مبكرًا ومتأخرًا لرحلات المطار والبرامج الطارئة." }
+  ],
+  "homeFaqTitle": "أسئلة شائعة",
+  "homeFaqItems": [
+    {
+      "question": "ما أفضل خدمة ليموزين في القاهرة؟",
+      "answer": "الأنسب يعتمد على المسار وعدد الركاب وهل تحتاج مطارًا. نركّز على عرض واضح وفئة سيارة ملائمة وتنسيق بالعربية والإنجليزية حتى يبقى الاستقبال منظمًا."
+    },
+    {
+      "question": "كيف أحجز نقل مطار في القاهرة؟",
+      "answer": "أرسل رقم الرحلة والمطار (CAI أو SPX) ووقت الوصول أو المغادرة وعدد الركاب والحقائب والوجهة عبر واتساب أو الهاتف. نؤكد نقطة اللقاء والسعر قبل السفر."
+    },
+    {
+      "question": "هل الليموزين متاح 24/7 في القاهرة؟",
+      "answer": "نعم. نستقبل الحجز وندعم رحلات الصباح الباكر والوصول المتأخر والتعديلات عند توفر السيارات."
+    },
+    {
+      "question": "هل يتوفر دعم بالعربية والإنجليزية؟",
+      "answer": "نعم. تعليمات الاستقبال والتأكيدات متاحة باللغتين لتسهيل التنسيق بين الضيف والمستقبلين محليًا."
+    },
+    {
+      "question": "هل يمكن دمج تنقلات المدينة مع ليموزين المطار؟",
+      "answer": "كثير من العملاء يجمعون بين اليومية والمطار. مشاركة البرنامج كاملًا تساعدنا على اقتراح التوقيت وحجم السيارة والهوامش المرورية الواقعية."
+    }
+  ],
+  "footerPopularServicesTitle": "خدمات شائعة",
+  "footerPopularCairoLimousine": "ليموزين القاهرة",
+  "footerPopularAirportTransfer": "ليموزين مطار القاهرة",
+  "footerPopularLimousineAirport": "خدمة ليموزين المطار"
 }
