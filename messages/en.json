@@ -15,24 +15,6 @@
   "ctaBookNow": "Book Now",
   "homeHeroTitle": "Cairo Airport limousine service with premium 24/7 support",
   "homeHeroSubtitle": "Comfort and professionalism on every ride in and out of Cairo.",
-  "homeHighlights": [
-    {
-      "title": "Modern fleet",
-      "subtitle": "Updated vehicles"
-    },
-    {
-      "title": "Professional drivers",
-      "subtitle": "Reliable service"
-    },
-    {
-      "title": "Fair pricing",
-      "subtitle": "Real value"
-    },
-    {
-      "title": "Fast booking",
-      "subtitle": "Instant confirmation"
-    }
-  ],
   "homeServicesTitle": "Our Services",
   "homeServicesCta": "View all services",
   "homeCtaTitle": "Book your ride now with Baraka Limousine",
@@ -754,10 +736,31 @@
   "homeWhyBarakaTitle": "Why Choose Baraka Limousine",
   "homeWhyBarakaSubtitle": "Straightforward standards on every ride.",
   "homeWhyBarakaItems": [
-    { "title": "Professional drivers", "text": "Courteous, route-smart chauffeurs across Greater Cairo." },
-    { "title": "On-time pickup", "text": "Buffers for rush hour, airport procedures, and flight changes when you share details." },
-    { "title": "Clean vehicles", "text": "Regularly maintained fleet from sedans to group vans and coaches." },
-    { "title": "24/7 service", "text": "Bookings and support around the clock for early flights and late arrivals." }
+    {
+      "title": "Professional drivers",
+      "text": "Route-smart, courteous chauffeurs with the experience and reliability you expect across Greater Cairo.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "On-time pickup",
+      "text": "Buffers for rush hour, airport procedures, and flight changes when you share details.",
+      "icon": "clock"
+    },
+    {
+      "title": "Modern, well-maintained fleet",
+      "text": "Updated sedans through group vans and coaches—clean, managed, and sized for your party.",
+      "icon": "shield"
+    },
+    {
+      "title": "Fair pricing",
+      "text": "Clear quotes and real value on every trip.",
+      "icon": "currency"
+    },
+    {
+      "title": "Fast booking & 24/7 support",
+      "text": "Quick WhatsApp or phone confirmation, with round-the-clock help for early flights and last-minute changes.",
+      "icon": "lightning"
+    }
   ],
   "homeFaqTitle": "Frequently asked questions",
   "homeFaqItems": [

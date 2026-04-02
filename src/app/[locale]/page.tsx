@@ -22,17 +22,14 @@ import {
   Bus,
   Briefcase,
   Car,
-  CheckCircle,
-  Crown,
+  Clock,
   CurrencyCircleDollar,
-  Heart,
   Lightning,
   MapPinLine,
   MapTrifold,
   PhoneCall,
   ShieldCheck,
   Star,
-  Van,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import { FacebookLogo } from "@phosphor-icons/react/dist/ssr";
@@ -43,11 +40,6 @@ import {
   SEO_PATH_LIMOUSINE_CAIRO_EN,
   getSeoLandingHref,
 } from "@/lib/seo-landing";
-
-type Highlight = {
-  title: string;
-  subtitle: string;
-};
 
 type FleetItem = {
   title: string;
@@ -70,7 +62,20 @@ type ServiceItem = {
   image: string;
 };
 
-type HomeWhyItem = { title: string; text: string };
+type HomeWhyIconKey = "briefcase" | "clock" | "shield" | "currency" | "lightning";
+
+type HomeWhyItem = { title: string; text: string; icon: HomeWhyIconKey };
+
+const HOME_WHY_ICONS: Record<
+  HomeWhyIconKey,
+  typeof Briefcase
+> = {
+  briefcase: Briefcase,
+  clock: Clock,
+  shield: ShieldCheck,
+  currency: CurrencyCircleDollar,
+  lightning: Lightning,
+};
 type HomeFaqItem = { question: string; answer: string };
 
 export async function generateMetadata({
@@ -96,7 +101,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const localeTyped = locale === "ar" || locale === "en" ? locale : "ar";
   const t = await getTranslations({ locale });
 
-  const highlights = t.raw("homeHighlights") as Highlight[];
   const allServices = t.raw("servicesItems") as ServiceItem[];
   const serviceItems = allServices.filter(
     (service) => !isServiceExcludedFromNav(service.id)
@@ -140,13 +144,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
     })),
   };
 
-  const highlightIcons = [
-    ShieldCheck,
-    Briefcase,
-    CurrencyCircleDollar,
-    Lightning,
-  ];
-
   return (
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <script
@@ -155,6 +152,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
       />
       <Header locale={locale} />
 
+      {/* HERO */}
       <HeroCarousel
         slides={heroSlides}
         locale={localeTyped}
@@ -169,6 +167,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
           {t("homeMainH1")}
         </h1>
 
+        {/* main SEO section */}
         <section
           className="mt-8 rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/50 md:p-8"
           aria-labelledby="home-seo-heading"
@@ -291,75 +290,29 @@ export default async function HomePage({ params }: { params: { locale: string } 
               {t("homeWhyBarakaSubtitle")}
             </p>
           </div>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whyBarakaItems.map((item) => (
-              <li
-                key={item.title}
-                className="flex gap-3 rounded-2xl border border-zinc-100 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <CheckCircle
-                  size={22}
-                  weight="duotone"
-                  className="mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"
-                  aria-hidden
-                />
-                <div>
-                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                    {item.title}
-                  </p>
-                  <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
-                    {item.text}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section
-          className="mt-12 rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/40 md:p-8"
-          aria-labelledby="home-faq"
-        >
-          <h2
-            id="home-faq"
-            className="text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
-          >
-            {t("homeFaqTitle")}
-          </h2>
-          <dl className="mt-6 space-y-6">
-            {homeFaqItems.map((item) => (
-              <div key={item.question}>
-                <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
-                  {item.question}
-                </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {item.answer}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
-        {/* HIGHLIGHTS */}
-        <section className="mt-12 rounded-3xl bg-emerald-50 p-8 dark:bg-emerald-950/30 dark:border dark:border-emerald-900/30">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {highlights.map((item, index) => {
-              const Icon = highlightIcons[index] ?? Star;
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {whyBarakaItems.map((item) => {
+              const Icon = HOME_WHY_ICONS[item.icon] ?? Briefcase;
               return (
-                <div key={item.title} className="rounded-xl bg-white p-4 dark:bg-zinc-900 dark:border dark:border-zinc-800">
-                  <div className="flex items-start gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
-                      <Icon size={18} weight="duotone" />
-                    </span>
-                    <div>
-                      <p className="font-semibold dark:text-zinc-100">{item.title}</p>
-                      <p className="text-xs text-zinc-500 dark:text-zinc-400">{item.subtitle}</p>
-                    </div>
+                <li
+                  key={item.title}
+                  className="flex gap-3 rounded-2xl border border-zinc-100 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-950"
+                >
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
+                    <Icon size={18} weight="duotone" aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                      {item.text}
+                    </p>
                   </div>
-                </div>
-              )
+                </li>
+              );
             })}
-          </div>
+          </ul>
         </section>
 
         {/* SERVICES */}
@@ -576,6 +529,31 @@ export default async function HomePage({ params }: { params: { locale: string } 
               </div>
             </div>
           </div>
+        </section>
+
+        {/* FAQ */}
+        <section
+          className="mt-12 rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/40 md:p-8"
+          aria-labelledby="home-faq"
+        >
+          <h2
+            id="home-faq"
+            className="text-xl font-bold text-zinc-900 dark:text-zinc-100 md:text-2xl"
+          >
+            {t("homeFaqTitle")}
+          </h2>
+          <dl className="mt-6 space-y-6">
+            {homeFaqItems.map((item) => (
+              <div key={item.question}>
+                <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                  {item.question}
+                </dt>
+                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* ROUTES & TRUST */}
