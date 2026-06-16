@@ -36,14 +36,26 @@ export async function generateMetadata({
   const service = getServiceBySlug(serviceSlug);
   if (!location || !service) return {};
 
-  const title =
+  let title =
     locale === "ar"
       ? `${service.title.ar} في ${location.name.ar} | بركة ليموزين`
       : `${location.name.en} ${service.title.en} | Baraka Limousine`;
-  const description =
+  let description =
     locale === "ar"
       ? `${service.seoDescription.ar} في ${location.name.ar}. احجز الآن بخدمة سريعة وسيارات متعددة.`
       : `${service.seoDescription.en} in ${location.name.en}. Book now with fast service and multiple vehicle options.`;
+
+  if (locale === "ar" && slug === "cairo" && serviceSlug === "airport-shuttle") {
+    title = "ليموزين مطار القاهرة | توصيل المطار في القاهرة | البركة ليموزين";
+    description =
+      "خدمة ليموزين مطار القاهرة تشمل استقبال وتوديع ومتابعة مواعيد الرحلات وسيارات مناسبة للأفراد والعائلات والحقائب داخل القاهرة الكبرى.";
+  }
+
+  if (locale === "ar" && slug === "cairo" && serviceSlug === "private-driver") {
+    title = "خدمات ليموزين في القاهرة | سيارة بسائق في القاهرة | البركة ليموزين";
+    description =
+      "خدمات ليموزين في القاهرة بسيارة بسائق للرحلات الخاصة والتنقلات اليومية والمشاوير المهمة داخل القاهرة الكبرى مع مرونة في الوقت والمسار.";
+  }
 
   return {
     title,

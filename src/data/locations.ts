@@ -34,19 +34,19 @@ export const locations: LocationPage[] = [
     slug: "cairo",
     name: { ar: "القاهرة", en: "Cairo" },
     metaTitle: {
-      ar: "توصيل مطار القاهرة وخدمة سائق خاص | بركة ليموزين",
+      ar: "خدمات ليموزين في القاهرة | ليموزين مطار القاهرة | البركة ليموزين",
       en: "Cairo Airport Transfers & Chauffeur Service | Baraka Limousine",
     },
     metaDescription: {
-      ar: "خدمة توصيل مطار القاهرة، سيارات بسائق للرحلات، ليموزين زفاف، سيارات كبيرة للعائلات، وحجز أتوبيس رحلات. تغطية كاملة للقاهرة وضواحيها.",
+      ar: "خدمات ليموزين في القاهرة تشمل ليموزين مطار القاهرة، سيارة بسائق للرحلات، ليموزين زفاف، وسيارات كبيرة للعائلات مع تغطية كاملة للقاهرة الكبرى.",
       en: "Cairo airport transfers, private car with driver, wedding limousine, large vehicles for families and luggage, and bus trips up to 50 passengers.",
     },
     heroTitle: {
-      ar: "توصيل مطار القاهرة وسيارة بسائق على أعلى مستوى",
+      ar: "خدمات ليموزين في القاهرة وليموزين مطار القاهرة",
       en: "Cairo Airport Transfers & Private Chauffeur",
     },
     heroSubtitle: {
-      ar: "خدمة احترافية في القاهرة تشمل استقبال المطار، الرحلات الخاصة، الزفاف، والسيارات الكبيرة للعائلات.",
+      ar: "خدمة احترافية في القاهرة تشمل ليموزين مطار القاهرة، استقبال المطار، الرحلات الخاصة، الزفاف، والسيارات الكبيرة للعائلات.",
       en: "Professional service in Cairo for airport pickup, private trips, weddings, and large vehicles for families.",
     },
     intro: [
